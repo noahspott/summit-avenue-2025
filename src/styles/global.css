@@ -44,8 +44,28 @@ html {
   --color-dark-3: #8d8d8d;
 }
 
-/* @layer components {
-  .heading-1 {
+.link-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 0%;
+  background: var(--color-brand-orange-500);
+  transition: width 0.3s ease;
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+@layer components {
+  /* .heading-1 {
     @apply text-1 
   }
   .heading-2 {
@@ -59,5 +79,10 @@ html {
   }
   .heading-5 {
     @apply text-5
+  } */
+
+  .text-link {
+    @apply text-xl
   }
-} */
+  
+}
