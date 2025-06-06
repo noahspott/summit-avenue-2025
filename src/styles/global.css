@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+:root {
+  --gradient-blue: linear-gradient(to bottom, #6c92c7, #1d3557);
+  --gradient-white: linear-gradient(to right, #ffffff, #f8f8f8);
+}
+
+html {
+  background-image: var(--gradient-white);
+  background-attachment: fixed;
+}
+
+@theme {
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-inter: "Inter", sans-serif;
+
+  --font-1: var(--font-montserrat)
+  --font-2: var(--font-inter)
+
+  --text-1: 72px;
+  --text-2: 60px;
+  --text-3: 36px;
+  --text-4: 30px;
+  --text-5: 24px;
+  --text-6: 22px;
+  --text-7: 20px;
+  --text-8: 18px;
+  --text-9: 16px;
+
+  --color-deep-blue-500: #1d3557;
+
+  --color-light-blue-500: #6c92c7;
+  --color-light-blue-300: #e7f1ff;
+  --color-light-blue-200: #f1f7ff;
+  --color-light-blue-100: #f7fbff;
+
+  --color-brand-orange-500: #f4a261;
+
+  --color-off-white: #f8f8f8;
+
+  --color-dark-1: #000000;
+  --color-dark-2: #3f3f3f;
+  --color-dark-3: #8d8d8d;
+}
+
+/* @layer components {
+  .heading-1 {
+    @apply text-1 
+  }
+  .heading-2 {
+    @apply text-2
+  }
+  .heading-3 {
+    @apply text-3
+  }
+  .heading-4 {
+    @apply text-4
+  }
+  .heading-5 {
+    @apply text-5
+  }
+} */
