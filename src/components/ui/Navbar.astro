@@ -1,0 +1,35 @@
+---
+// Components
+import Image from "astro/components/Image.astro";
+import Content from "./Content";
+
+// Images
+import logoFull from "../../assets/images/logos/summit-avenue-logo-full.svg";
+
+// Data
+import { LINKS } from "../../assets/data/links";
+---
+
+<header class="py-8">
+  <Content>
+    <nav class="flex justify-between">
+      <Image src={logoFull} alt="" class="h-12 w-auto" />
+      <ul class="flex gap-8">
+        {
+          LINKS.map((link) => {
+            return (
+              <li>
+                <a
+                  class="font-montserrat text-link text-dark-1 link-underline"
+                  href={link.href}
+                >
+                  {link.display}
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </nav>
+  </Content>
+</header>
