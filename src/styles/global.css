@@ -15,8 +15,8 @@ html {
   --font-montserrat: "Montserrat", sans-serif;
   --font-inter: "Inter", sans-serif;
 
-  --font-1: var(--font-montserrat)
-  --font-2: var(--font-inter)
+  --font-weight-1: 400;
+  --font-weight-2: 600;
 
   --text-1: 72px;
   --text-2: 60px;
@@ -64,6 +64,12 @@ html {
   width: 100%;
 }
 
+.gradient-blue-text {
+  background: var(--gradient-blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 @layer components {
   /* .heading-1 {
     @apply text-1 
@@ -81,8 +87,11 @@ html {
     @apply text-5
   } */
 
-  .text-link {
-    @apply text-xl
+  .text-h1 {
+    @apply text-1 leading-[120%];
   }
-  
+
+  .text-link {
+    @apply text-xl;
+  }
 }
