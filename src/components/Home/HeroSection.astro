@@ -12,7 +12,7 @@ import mountainBg from "../../assets/images/decorative/hero-mountain-bg-fade.png
   <Image
     src={mountainBg}
     alt=""
-    class="absolute top-[52px] -right-[13px] mix-blend-color-burn -z-[60] w-[1201.69px] h-[798px] opacity-10 parallax-img"
+    class="absolute top-[52px] -right-[13px] -z-[60] w-[1201.69px] h-[798px] opacity-10 parallax-img"
   />
   <AnimatedHeroLogo
     client:load
@@ -26,7 +26,7 @@ import mountainBg from "../../assets/images/decorative/hero-mountain-bg-fade.png
         >
       </h1>
       <p class="text-xl font-montserrat">
-        We make modern, clean, performant websites <br />to elevate your online
+        We make modern, performant websites <br />to elevate your online
         presence.
       </p>
       <ButtonPrimary className="self-start">
@@ -40,9 +40,21 @@ import mountainBg from "../../assets/images/decorative/hero-mountain-bg-fade.png
   window.addEventListener("scroll", () => {
     const img = document.querySelector(".parallax-img");
     if (img instanceof HTMLElement) {
-      const parallaxImg = img;
-      const offset = (window.scrollY || window.pageYOffset) * 0.5;
-      parallaxImg.style.transform = `translateY(${offset}px)`;
+      const scrollY = window.scrollY || window.pageYOffset;
+
+      // Parallax offset
+      const offset = scrollY * 0.5;
+      img.style.transform = `translateY(${offset}px)`;
+
+      // Opacity effect
+      const maxScroll = 250;
+      const minOpacity = 0.1;
+      const maxOpacity = 1;
+
+      const scrollFactor = Math.min(scrollY / maxScroll, 1);
+      const newOpacity = minOpacity + (maxOpacity - minOpacity) * scrollFactor;
+
+      img.style.opacity = newOpacity.toString();
     }
   });
 </script>
