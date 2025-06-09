@@ -72,14 +72,13 @@ export default function AnimatedHeroLogo({ className }: { className: string }) {
           }}
         />
         <motion.img
-          src="src/assets/images/decorative/logo-mountain.svg"
+          src="src/assets/images/decorative/logo-white.svg"
           className={`absolute w-[1000px] h-[1000px]`}
           alt=""
           style={{
             x: x2,
             y: y2,
             opacity: opacityWhite,
-            filter: "brightness(100)",
             willChange: "transform, opacity",
           }}
         />
