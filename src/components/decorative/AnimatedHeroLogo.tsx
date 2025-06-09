@@ -1,5 +1,6 @@
 import {
   motion,
+  MotionValue,
   transform,
   useScroll,
   useSpring,
@@ -7,9 +8,15 @@ import {
 } from "framer-motion";
 import { useRef } from "react";
 
-export default function AnimatedHeroLogo({ className }: { className: string }) {
+export default function AnimatedHeroLogo({
+  scrollY,
+  className,
+}: {
+  scrollY: MotionValue<number>;
+  className: string;
+}) {
   const targetRef = useRef(null);
-  const { scrollY } = useScroll();
+  // const { scrollY } = useScroll();
   const smoothScrollY = useSpring(scrollY, {
     stiffness: 100, // Lower = smoother
     damping: 20, // Higher = less bouncy

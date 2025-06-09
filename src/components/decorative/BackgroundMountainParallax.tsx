@@ -1,13 +1,16 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, MotionValue, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 const mountainBg = "src/assets/images/decorative/hero-mountain-bg-fade.png";
 
-export default function BackgroundMountainParallax() {
+export default function BackgroundMountainParallax({
+  scrollY,
+}: {
+  scrollY: MotionValue<number>;
+}) {
   const ref = useRef(null);
-  const { scrollY } = useScroll();
 
   // Parallax vertical translate
   const y = useTransform(scrollY, [0, 1000], [0, 500]);

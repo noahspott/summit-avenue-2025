@@ -1,21 +1,23 @@
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { motion, MotionValue, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 export default function BackgroundRectangles({
+  scrollY,
   className,
 }: {
+  scrollY: MotionValue<number>;
   className?: string;
 }) {
   const targetRef = useRef(null);
-  const { scrollY } = useScroll();
-
-  const y1 = useTransform(scrollY, [0, 1000], [0, 300]);
-  const y2 = useTransform(scrollY, [0, 1000], [0, 200]);
-  const y3 = useTransform(scrollY, [0, 1000], [0, 100]);
 
   const x1 = useTransform(scrollY, [0, 1000], [0, 400]);
+  const y1 = useTransform(scrollY, [0, 1000], [0, 300]);
+
   const x2 = useTransform(scrollY, [0, 1000], [0, 200]);
+  const y2 = useTransform(scrollY, [0, 1000], [0, 200]);
+
   const x3 = useTransform(scrollY, [0, 1000], [0, 0]);
+  const y3 = useTransform(scrollY, [0, 1000], [0, 100]);
 
   return (
     <div
