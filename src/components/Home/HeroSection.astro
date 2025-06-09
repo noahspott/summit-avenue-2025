@@ -1,19 +1,15 @@
 ---
-import { Image } from "astro:assets";
 import { Content, ButtonPrimary } from "../ui";
-import { BackgroundRectangles, AnimatedHeroLogo } from "../decorative";
-
-// Images
-import mountainBg from "../../assets/images/decorative/hero-mountain-bg-fade.png";
+import {
+  BackgroundRectangles,
+  AnimatedHeroLogo,
+  BackgroundMountainParallax,
+} from "../decorative";
 ---
 
 <section class="py-64 relative overflow-clip">
   <BackgroundRectangles client:load className="z-20" />
-  <Image
-    src={mountainBg}
-    alt=""
-    class="absolute top-[52px] -right-[13px] -z-[60] w-[1201.69px] h-[798px] opacity-10 parallax-img"
-  />
+  <BackgroundMountainParallax client:load />
   <AnimatedHeroLogo
     client:load
     className="z-10 right-[70px] -top-[70px] opacity-90"
@@ -35,26 +31,3 @@ import mountainBg from "../../assets/images/decorative/hero-mountain-bg-fade.png
     </div>
   </Content>
 </section>
-
-<script>
-  window.addEventListener("scroll", () => {
-    const img = document.querySelector(".parallax-img");
-    if (img instanceof HTMLElement) {
-      const scrollY = window.scrollY || window.pageYOffset;
-
-      // Parallax offset
-      const offset = scrollY * 0.5;
-      img.style.transform = `translateY(${offset}px)`;
-
-      // Opacity effect
-      const maxScroll = 250;
-      const minOpacity = 0.1;
-      const maxOpacity = 1;
-
-      const scrollFactor = Math.min(scrollY / maxScroll, 1);
-      const newOpacity = minOpacity + (maxOpacity - minOpacity) * scrollFactor;
-
-      img.style.opacity = newOpacity.toString();
-    }
-  });
-</script>
