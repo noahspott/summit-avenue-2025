@@ -15,8 +15,8 @@ html {
   --font-montserrat: "Montserrat", sans-serif;
   --font-inter: "Inter", sans-serif;
 
-  --font-1: var(--font-montserrat)
-  --font-2: var(--font-inter)
+  --font-weight-1: 400;
+  --font-weight-2: 600;
 
   --text-1: 72px;
   --text-2: 60px;
@@ -64,6 +64,44 @@ html {
   width: 100%;
 }
 
+.gradient-blue-text {
+  background: var(--gradient-blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gradient-blue-bg {
+  background: var(--gradient-blue);
+}
+
+/* Primary Button */
+.button-primary__border {
+  background: var(--gradient-blue);
+}
+.button-primary__border:hover {
+  background: var(--color-brand-orange-500);
+}
+.button-primary__text {
+  background: var(--gradient-blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.button-primary__border:hover .button-primary__text {
+  background: white;
+  -webkit-text-fill-color: var(--color-brand-orange-500);
+}
+.button-primary__arrow {
+  position: relative;
+  left: 0;
+  transition: left 150ms;
+}
+.button-primary__border:hover .button-primary__arrow {
+  stroke: var(--color-brand-orange-500);
+  left: 3px;
+}
+.button-primary__arrow {
+  stroke: var(--color-deep-blue-500);
+}
+
 @layer components {
   /* .heading-1 {
     @apply text-1 
@@ -81,8 +119,11 @@ html {
     @apply text-5
   } */
 
-  .text-link {
-    @apply text-xl
+  .text-h1 {
+    @apply text-1 leading-[120%];
   }
-  
+
+  .text-link {
+    @apply text-xl;
+  }
 }
