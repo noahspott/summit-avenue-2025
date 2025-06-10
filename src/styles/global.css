@@ -42,6 +42,11 @@ html {
   --color-dark-1: #000000;
   --color-dark-2: #3f3f3f;
   --color-dark-3: #8d8d8d;
+
+  --color-light-1: #ffffff;
+  --color-light-2: #f8f8f8;
+
+  --radius-card: 16px;
 }
 
 .link-underline {
@@ -121,6 +126,30 @@ html {
 
   .text-h1 {
     @apply text-1 leading-[120%];
+  }
+  .text-h2 {
+    @apply text-2 leading-[120%];
+  }
+  .text-h3 {
+    @apply text-3 leading-[120%];
+  }
+  .text-h4 {
+    @apply text-4 leading-[120%];
+  }
+  .text-h5 {
+    @apply text-5 leading-[120%];
+  }
+  .text-h6 {
+    @apply text-6 leading-[120%];
+  }
+  .text-h7 {
+    @apply text-7 leading-[120%];
+  }
+  .text-h8 {
+    @apply text-8 leading-[120%];
+  }
+  .text-h9 {
+    @apply text-9 leading-[120%];
   }
 
   .text-link {

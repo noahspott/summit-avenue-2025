@@ -1,0 +1,107 @@
+---
+import { Content } from "@/components/ui";
+import { motion } from "motion/react";
+import { Image } from "astro:assets";
+
+// Images
+import background from "@/assets/images/decorative/services-section-bg.png";
+
+import websiteDesignIcon from "@/assets/images/icons/panels-top-left.svg";
+import websiteDevelopmentIcon from "@/assets/images/icons/code.svg";
+import copywritingIcon from "@/assets/images/icons/pen-line.svg";
+import graphicDesignIcon from "@/assets/images/icons/paintbrush.svg";
+import apiIcon from "@/assets/images/icons/cable.svg";
+import hostingIcon from "@/assets/images/icons/server.svg";
+
+// Data
+const services = [
+  {
+    icon: websiteDesignIcon,
+    title: "Website Design",
+    description:
+      "Crafting clean, responsive designs that reflect your brand and keep users engaged across all devices.",
+    href: "",
+  },
+  {
+    icon: websiteDevelopmentIcon,
+    title: "Web Development",
+    description:
+      "Modern, performant websites built with clean code, strong UX principles, and scalable architecture.",
+    href: "",
+  },
+  {
+    icon: copywritingIcon,
+    title: "Copywriting",
+    description:
+      "Clear, persuasive copy that speaks to your audience and strengthens your brand's voice.",
+    href: "",
+  },
+  {
+    icon: graphicDesignIcon,
+    title: "Graphic Design",
+    description:
+      "Stand-out visuals for web, print, and social—designed to elevate your brand and captivate your audience.",
+    href: "",
+  },
+  {
+    icon: apiIcon,
+    title: "API Integration",
+    description:
+      "Custom backend solutions that connect your site with the tools and data you rely on.",
+    href: "",
+  },
+  {
+    icon: hostingIcon,
+    title: "Hosting & Maintenance",
+    description:
+      "Reliable, secure hosting with ongoing updates, backups, and performance monitoring—so your site just works.",
+    href: "",
+  },
+];
+---
+
+<section class="py-24">
+  <Content>
+    <motion.div
+      className="px-12 py-24 relative bg-black overflow-clip rounded-card"
+      client:load
+    >
+      <Image
+        src={background}
+        class="absolute w-full h-full object-cover top-0 left-0"
+        alt=""
+      />
+      <div class="relative z-10 flex flex-col gap-12">
+        <div class="flex flex-col gap-2">
+          <h2 class="font-montserrat text-h4 font-2 text-light-1">
+            Our Services
+          </h2>
+          <p class="font-montserrat text-h2 font-2 text-light-1">What We Do</p>
+        </div>
+        <ul class="grid grid-cols-2 gap-4">
+          {
+            services.map((service) => {
+              return (
+                <li class="border border-light-blue-500/30 rounded-card bg-light-blue-500/30 backdrop-blur-lg flex flex-col gap-4 p-8">
+                  <Image src={service.icon} alt="" class="size-16 " />
+                  <h3 class="text-light-1 text-3 font-montserrat font-2">
+                    {service.title}
+                  </h3>
+                  <p class="text-light-1 text-7 font-inter">
+                    {service.description}
+                  </p>
+                </li>
+              );
+            })
+          }
+        </ul>
+      </div>
+    </motion.div>
+  </Content>
+</section>
+
+<style>
+  .icon {
+    stroke: var(--color-off-white);
+  }
+</style>
