@@ -18,16 +18,6 @@ html {
   --font-weight-1: 400;
   --font-weight-2: 600;
 
-  --text-1: 72px;
-  --text-2: 60px;
-  --text-3: 36px;
-  --text-4: 30px;
-  --text-5: 24px;
-  --text-6: 22px;
-  --text-7: 20px;
-  --text-8: 18px;
-  --text-9: 16px;
-
   --color-deep-blue-500: #1d3557;
 
   --color-light-blue-500: #6c92c7;
@@ -123,31 +113,44 @@ html {
   } */
 
   .text-h1 {
-    @apply text-1 leading-[120%];
+    @apply text-7xl;
   }
   .text-h2 {
-    @apply text-2 leading-[120%];
+    @apply text-6xl;
   }
   .text-h3 {
-    @apply text-3 leading-[120%];
+    @apply text-4xl;
   }
   .text-h4 {
-    @apply text-4 leading-[120%];
+    @apply text-3xl;
   }
   .text-h5 {
-    @apply text-5 leading-[120%];
+    @apply text-2xl;
   }
   .text-h6 {
-    @apply text-6 leading-[120%];
+    @apply text-[22px] leading-tight;
   }
   .text-h7 {
-    @apply text-7 leading-[120%];
+    @apply text-xl;
   }
   .text-h8 {
-    @apply text-8 leading-[120%];
+    @apply text-lg;
   }
   .text-h9 {
-    @apply text-9 leading-[120%];
+    @apply text-base;
+  }
+
+  .text-body-sm {
+    @apply text-base leading-normal;
+  }
+  .text-body-base {
+    @apply text-xl leading-normal;
+  }
+  .text-body-md {
+    @apply text-[22px] leading-normal;
+  }
+  .text-body-lg {
+    @apply text-2xl leading-normal;
   }
 
   .text-link {
