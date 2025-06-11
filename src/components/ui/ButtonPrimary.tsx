@@ -23,7 +23,7 @@ export default function ButtonPrimary({
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          className="lucide lucide-move-right-icon lucide-move-right button-primary__arrow"
+          className="lucide lucide-move-right-icon lucide-move-right button__arrow"
         >
           <path d="M18 8L22 12L18 16" />
           <path d="M2 12H22" />

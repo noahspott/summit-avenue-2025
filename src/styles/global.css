@@ -18,16 +18,6 @@ html {
   --font-weight-1: 400;
   --font-weight-2: 600;
 
-  --text-1: 72px;
-  --text-2: 60px;
-  --text-3: 36px;
-  --text-4: 30px;
-  --text-5: 24px;
-  --text-6: 22px;
-  --text-7: 20px;
-  --text-8: 18px;
-  --text-9: 16px;
-
   --color-deep-blue-500: #1d3557;
 
   --color-light-blue-500: #6c92c7;
@@ -42,13 +32,16 @@ html {
   --color-dark-1: #000000;
   --color-dark-2: #3f3f3f;
   --color-dark-3: #8d8d8d;
+
+  --color-light-1: #ffffff;
+  --color-light-2: #f8f8f8;
+
+  --radius-card: 16px;
 }
 
 .link-underline {
   position: relative;
-  display: inline-block;
 }
-
 .link-underline::after {
   content: "";
   position: absolute;
@@ -59,7 +52,6 @@ html {
   background: var(--color-brand-orange-500);
   transition: width 0.3s ease;
 }
-
 .link-underline:hover::after {
   width: 100%;
 }
@@ -89,17 +81,18 @@ html {
   background: white;
   -webkit-text-fill-color: var(--color-brand-orange-500);
 }
-.button-primary__arrow {
+.button__arrow {
   position: relative;
   left: 0;
   transition: left 150ms;
 }
-.button-primary__border:hover .button-primary__arrow {
+.button-primary__border:hover .button__arrow {
   stroke: var(--color-brand-orange-500);
   left: 3px;
 }
-.button-primary__arrow {
-  stroke: var(--color-deep-blue-500);
+
+.button-secondary:hover .button__arrow {
+  left: 3px;
 }
 
 @layer components {
@@ -120,7 +113,44 @@ html {
   } */
 
   .text-h1 {
-    @apply text-1 leading-[120%];
+    @apply text-7xl;
+  }
+  .text-h2 {
+    @apply text-6xl;
+  }
+  .text-h3 {
+    @apply text-4xl;
+  }
+  .text-h4 {
+    @apply text-3xl;
+  }
+  .text-h5 {
+    @apply text-2xl;
+  }
+  .text-h6 {
+    @apply text-[22px] leading-tight;
+  }
+  .text-h7 {
+    @apply text-xl;
+  }
+  .text-h8 {
+    @apply text-lg;
+  }
+  .text-h9 {
+    @apply text-base;
+  }
+
+  .text-body-sm {
+    @apply text-base leading-normal;
+  }
+  .text-body-base {
+    @apply text-xl leading-normal;
+  }
+  .text-body-md {
+    @apply text-[22px] leading-normal;
+  }
+  .text-body-lg {
+    @apply text-2xl leading-normal;
   }
 
   .text-link {
