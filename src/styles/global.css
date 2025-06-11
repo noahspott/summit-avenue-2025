@@ -140,8 +140,11 @@ html {
     @apply text-base;
   }
 
-  .text-body-sm {
+  .text-body-xs {
     @apply text-base leading-normal;
+  }
+  .text-body-sm {
+    @apply text-lg leading-normal;
   }
   .text-body-base {
     @apply text-xl leading-normal;

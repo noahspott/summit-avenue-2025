@@ -1,0 +1,57 @@
+---
+import { Content } from "@/components/ui";
+
+const testimonials = [
+  {
+    body: "Working with Summit Avenue Web Solutions was an amazing experience! Noah exceeded my expectations in every way—easy to work with, attentive to my needs, and delivered a site beyond my imagination with impressive attention to detail. I highly recommend Summit Avenue for anyone seeking exceptional design and reliable web solutions.",
+    author: "Angelique Buckley",
+    location: "Philadelphia, PA",
+    image: "",
+  },
+  {
+    body: "Noah Spott is the consummate professional. Very knowledgeable in not just the technical aspects of building your site, but the abstract ideas in branding and visual appeal as well.",
+    author: "Pete Vigliotti",
+    location: "Bear, DE",
+    image: "",
+  },
+  {
+    body: "Great professional web design.  Noah's work is excellent and the finished product was just as requested.",
+    author: "Janet Jackson",
+    location: "Stroudsburg, PA",
+    image: "",
+  },
+];
+---
+
+<section class="py-24">
+  <Content>
+    <div class="flex flex-col gap-12">
+      <div class="flex flex-col gap-2">
+        <h2 class="text-h4 font-montserrat font-2 text-dark-2">Testimonials</h2>
+        <p class="text-h2 font-montserrat font-2 text-dark-1">
+          What Our Clients Say
+        </p>
+      </div>
+      <ul class="grid grid-cols-3 gap-4">
+        {
+          testimonials.map((testimonial) => {
+            return (
+              <li class="p-8 flex flex-col gap-8 bg-white/60 backdrop-blur-lg shadow-xl rounded-card self-start">
+                <p class="font-inter leading-6 font-1 text-[96px] text-light-blue-500 relative top-6">
+                  "
+                </p>
+                <p class="text-body-base font-montserrat">{testimonial.body}</p>
+                <div class="flex flex-col gap-1">
+                  <p class="text-body-base font-inter font-2">
+                    {testimonial.author}
+                  </p>
+                  <p class="text-body-sm font-inter">{testimonial.location}</p>
+                </div>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+  </Content>
+</section>
