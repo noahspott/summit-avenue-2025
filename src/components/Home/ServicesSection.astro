@@ -1,5 +1,5 @@
 ---
-import { Content } from "@/components/ui";
+import { Content, ButtonSecondary } from "@/components/ui";
 import { motion } from "motion/react";
 import { Image } from "astro:assets";
 
@@ -90,6 +90,9 @@ const services = [
                   <p class="text-light-1 text-7 font-inter">
                     {service.description}
                   </p>
+                  {/* <ButtonSecondary href={service.href} className="self-start">
+                    Learn More
+                  </ButtonSecondary> */}
                 </li>
               );
             })

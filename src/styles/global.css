@@ -51,9 +51,7 @@ html {
 
 .link-underline {
   position: relative;
-  display: inline-block;
 }
-
 .link-underline::after {
   content: "";
   position: absolute;
@@ -64,7 +62,6 @@ html {
   background: var(--color-brand-orange-500);
   transition: width 0.3s ease;
 }
-
 .link-underline:hover::after {
   width: 100%;
 }
@@ -94,17 +91,18 @@ html {
   background: white;
   -webkit-text-fill-color: var(--color-brand-orange-500);
 }
-.button-primary__arrow {
+.button__arrow {
   position: relative;
   left: 0;
   transition: left 150ms;
 }
-.button-primary__border:hover .button-primary__arrow {
+.button-primary__border:hover .button__arrow {
   stroke: var(--color-brand-orange-500);
   left: 3px;
 }
-.button-primary__arrow {
-  stroke: var(--color-deep-blue-500);
+
+.button-secondary:hover .button__arrow {
+  left: 3px;
 }
 
 @layer components {
