@@ -1,0 +1,29 @@
+/* Primary Button */
+.button-primary__border {
+  background: var(--gradient-blue);
+}
+.button-primary__border:hover {
+  background: var(--color-brand-orange-500);
+}
+.button-primary__text {
+  background: var(--gradient-blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.button-primary__border:hover .button-primary__text {
+  background: white;
+  -webkit-text-fill-color: var(--color-brand-orange-500);
+}
+.button__arrow {
+  position: relative;
+  left: 0;
+  transition: left 150ms;
+}
+.button-primary__border:hover .button__arrow {
+  stroke: var(--color-brand-orange-500);
+  left: 3px;
+}
+
+.button-secondary:hover .button__arrow {
+  left: 3px;
+}

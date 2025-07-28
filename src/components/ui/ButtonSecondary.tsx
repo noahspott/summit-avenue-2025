@@ -4,14 +4,16 @@ export default function ButtonSecondary({
   children,
   href,
   className,
+  arrowHex = "#ffffff",
 }: {
   children: React.ReactNode;
   href: string;
   className?: string;
+  arrowHex?: string;
 }) {
   return (
     <a
-      className={`button-secondary relative flex flex-row gap-2.5 items-center text-white ${className}`}
+      className={`button-secondary relative flex flex-row gap-2.5 items-center  ${className}`}
       href={href}
     >
       <div className="text-xl link-underline font-montserrat font-2 pt-4 mb-4">
@@ -23,7 +25,7 @@ export default function ButtonSecondary({
         height="24"
         viewBox="0 0 24 24"
         fill="none"
-        stroke="#ffffff"
+        stroke={arrowHex}
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"

@@ -1,0 +1,61 @@
+---
+// Components
+import { Image } from "astro:assets";
+import { ButtonSecondary } from "../ui";
+import { sfhMockupDesktop } from "@/assets/data/portfolio";
+
+// Types
+type OurWorkType = {
+  logo: {
+    src: ImageMetadata;
+    alt: string;
+  };
+  heading: string[];
+  body: string;
+  mockupImages: {
+    mobile: { src: ImageMetadata; alt: string };
+    desktop: { src: ImageMetadata; alt: string };
+  };
+  href: string;
+  className: string;
+};
+
+const { logo, heading, body, mockupImages, href, className } =
+  Astro.props as OurWorkType;
+---
+
+<div
+  class={`flex flex-col md:flex-row gap-24 shadow-2xl rounded-2xl px-24 ${className}`}
+>
+  <div class="flex-1 flex flex-col gap-8 py-24">
+    <Image src={logo.src} alt={logo.alt} />
+    <h3 class="text-dark-1 text-h4 font-semibold">
+      {
+        heading.map((text) => {
+          return (
+            <>
+              <span>{text}</span>
+              <br />
+            </>
+          );
+        })
+      }
+    </h3>
+    <p class="text-dark-2 text-body-base">{body}</p>
+    <ButtonSecondary className="text-dark-1" arrowHex="#000000" href={href}
+      >Visit Site</ButtonSecondary
+    >
+  </div>
+  <div class="flex-1 relative pt-16">
+    <Image
+      class="absolute"
+      src={mockupImages.desktop.src}
+      alt={mockupImages.desktop.alt}
+    />
+    <Image
+      class="absolute -bottom-20 right-0"
+      src={mockupImages.mobile.src}
+      alt={mockupImages.mobile.alt}
+    />
+  </div>
+</div>

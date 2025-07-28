@@ -1,0 +1,66 @@
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 0%;
+  background: var(--color-brand-orange-500);
+  transition: width 0.3s ease;
+}
+.link-underline:hover::after {
+  width: 100%;
+}
+
+@layer components {
+  .text-h1 {
+    @apply text-7xl;
+  }
+  .text-h2 {
+    @apply text-6xl;
+  }
+  .text-h3 {
+    @apply text-4xl;
+  }
+  .text-h4 {
+    @apply text-3xl;
+  }
+  .text-h5 {
+    @apply text-2xl;
+  }
+  .text-h6 {
+    @apply text-[22px] leading-tight;
+  }
+  .text-h7 {
+    @apply text-xl;
+  }
+  .text-h8 {
+    @apply text-lg;
+  }
+  .text-h9 {
+    @apply text-base;
+  }
+
+  .text-body-xs {
+    @apply text-base leading-normal;
+  }
+  .text-body-sm {
+    @apply text-lg leading-normal;
+  }
+  .text-body-base {
+    @apply text-xl leading-normal;
+  }
+  .text-body-md {
+    @apply text-[22px] leading-normal;
+  }
+  .text-body-lg {
+    @apply text-2xl leading-normal;
+  }
+
+  .text-link {
+    @apply text-xl;
+  }
+}
