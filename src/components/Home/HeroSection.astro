@@ -6,17 +6,18 @@ import { HeroBackground } from "../decorative";
 <section class="py-64 relative overflow-clip">
   <HeroBackground client:load />
   <Content>
-    <div class="relative flex flex-col gap-8 z-50">
+    <div
+      class="relative flex flex-col gap-8 z-50 text-center sm:text-left items-center sm:items-start"
+    >
       <h1 class="font-2 font-montserrat text-h1">
-        Custom Websites<br />For <span class="gradient-blue-text"
-          >Small Businesses</span
-        >
+        Custom Websites for<br />
+        <span class="gradient-blue-text">Small Businesses</span>
       </h1>
-      <p class="text-body-base font-montserrat">
-        We make modern, performant websites <br />to elevate your online
-        presence.
+      <p class="text-body-base font-montserrat max-w-[400px]">
+        We make modern, performant websites <br class="hidden sm:block" />to
+        elevate your online presence.
       </p>
-      <ButtonPrimary className="self-start">
+      <ButtonPrimary className="sm:self-start">
         Let's Build Your Website
       </ButtonPrimary>
     </div>

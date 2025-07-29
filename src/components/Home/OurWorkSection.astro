@@ -2,6 +2,7 @@
 // Components
 import { Content } from "../ui";
 import OurWorkCard from "./OurWorkCard.astro";
+import OurWorkBackground from "../decorative/OurWorkBackground";
 
 // Images
 import {
@@ -32,7 +33,8 @@ const work = [
       desktop: { src: thebenderzMockupDesktop, alt: "" },
     },
     href: thebenderzUrl,
-    className: "bg-gradient-to-br from-[#ffffff] from-50% to-[#0A8A71]",
+    className:
+      "bg-linear-320 lg:bg-linear-45 from-[#ffffff] from-75% to-[#0A8A71]",
   },
   {
     logo: {
@@ -49,7 +51,8 @@ const work = [
       desktop: { src: adartistryMockupDesktop, alt: "" },
     },
     href: adartistryUrl,
-    className: "bg-gradient-to-br from-[#ffffff] from-50% to-[#C69E7A]",
+    className:
+      "bg-linear-320 lg:bg-linear-45 from-[#ffffff] from-75% to-[#C69E7A]",
   },
   {
     logo: { src: sfhLogo, alt: "Logo for apparel brand, SFH" },
@@ -60,18 +63,22 @@ const work = [
       desktop: { src: sfhMockupDesktop, alt: "" },
     },
     href: sfhUrl,
-    className: "bg-gradient-to-br from-[#ffffff] from-50% to-[#000000]",
+    className:
+      "bg-linear-320 lg:bg-linear-45 from-[#ffffff] from-75% to-[#000000]",
   },
 ];
 ---
 
-<section class="py-24">
+<section class="py-24 relative overflow-clip">
+  <OurWorkBackground client:load />
   <Content>
     <div class="flex flex-col gap-24">
-      <div class="flex flex-col items-end gap-2">
+      <div class="flex flex-col items-end text-end gap-2">
         <h2 class="text-h4 font-montserrat font-2 text-dark-2">Our Work</h2>
         <p class="text-h2 font-montserrat font-2 text-dark-1">
-          Made by <span class="gradient-blue-text">Summit Avenue</span>
+          Made by <br class="min-[433px]:hidden block" /><span
+            class="gradient-blue-text">Summit Avenue</span
+          >
         </p>
       </div>
       <ul class="flex flex-col gap-24">

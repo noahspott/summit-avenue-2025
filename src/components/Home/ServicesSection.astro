@@ -63,7 +63,7 @@ const services = [
 <section class="py-24">
   <Content>
     <motion.div
-      className="px-12 py-24 relative bg-black overflow-clip rounded-card"
+      className="-mx-[6%] md:-mx-0 px-[5%] py-24 relative bg-black overflow-clip rounded-card"
       client:load
     >
       <Image
@@ -78,12 +78,16 @@ const services = [
           </h2>
           <p class="font-montserrat text-h2 font-2 text-light-1">What We Do</p>
         </div>
-        <ul class="grid grid-cols-2 gap-4">
+        <ul class="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {
             services.map((service) => {
               return (
                 <li class="border border-light-blue-500/30 rounded-card bg-light-blue-500/30 backdrop-blur-lg flex flex-col gap-4 p-8">
-                  <Image src={service.icon} alt="" class="size-16 " />
+                  <Image
+                    src={service.icon}
+                    alt=""
+                    class="size-12 lg:size-14 "
+                  />
                   <h3 class="text-light-1 text-h3 font-montserrat font-2">
                     {service.title}
                   </h3>

@@ -23,7 +23,7 @@ export default function BackgroundMountainParallax({
       ref={ref}
       src={mountainBg}
       alt=""
-      className="absolute top-[52px] -right-[13px] -z-[60] w-[1201.69px] h-[798px]"
+      className="absolute top-[52px] -right-[13px] -z-[60] w-full h-auto min-[1203px]:w-[1201.69px] min-[1203px]:h-[798px]"
       style={{ y, opacity }}
       draggable={false}
     />

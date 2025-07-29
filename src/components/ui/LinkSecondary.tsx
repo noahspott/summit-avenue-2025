@@ -1,17 +1,17 @@
-type ButtonSecondaryProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+type LinkSecondaryProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
   children: React.ReactNode;
   className?: string;
   arrowHex?: string;
 };
 
-export default function ButtonSecondary({
+export default function LinkSecondary({
   children,
   className = "",
   arrowHex = "#ffffff",
   ...props
-}: ButtonSecondaryProps) {
+}: LinkSecondaryProps) {
   return (
-    <button
+    <a
       {...props}
       className={`button-secondary relative flex flex-row gap-2.5 items-center ${className}`}
     >
@@ -33,6 +33,6 @@ export default function ButtonSecondary({
         <path d="M18 8L22 12L18 16" />
         <path d="M2 12H22" />
       </svg>
-    </button>
+    </a>
   );
 }

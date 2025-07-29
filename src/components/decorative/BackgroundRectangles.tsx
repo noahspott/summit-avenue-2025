@@ -24,7 +24,7 @@ export default function BackgroundRectangles({
       ref={targetRef}
       className={`absolute inset-0 overflow-clip pointer-events-none ${className}`}
     >
-      <div className="relative w-full h-full -top-[500px] -left-[600px]">
+      <div className="relative w-full h-full -top-[500px] -left-[850px] sm:-left-[800px] md:-left-[700px] lg:-left-[600px]">
         <motion.div
           className="bg-light-blue-100 absolute h-[2000px] w-[700px] -z-50 top-0 left-32"
           style={{
