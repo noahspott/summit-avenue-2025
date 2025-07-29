@@ -3,11 +3,14 @@
 import Image from "astro/components/Image.astro";
 import Content from "./Content";
 
+// Types
+import type { Link } from "@/data/links";
+
 // Images
 import logoFull from "@/assets/images/logos/summit-avenue-logo-full.png";
 
 // Data
-import { LINKS } from "@/assets/data/links";
+import { LINKS } from "@/data/links";
 ---
 
 <header class="py-8 absolute top-0 left-0 right-0 z-50">
@@ -21,11 +24,11 @@ import { LINKS } from "@/assets/data/links";
       />
       <ul class="gap-8 hidden md:flex">
         {
-          LINKS.map((link) => {
+          LINKS.map((link: Link) => {
             return (
-              <li>
+              <li class="rounded-full">
                 <a
-                  class="font-montserrat text-link text-dark-1 link-underline"
+                  class="font-montserrat text-link text-dark-1 link-underline rounded-full"
                   href={link.href}
                 >
                   {link.display}

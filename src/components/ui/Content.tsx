@@ -1,5 +1,13 @@
-export default function Content({ children }: { children: React.ReactNode }) {
+export default function Content({
+  className = "",
+  children,
+}: {
+  className?: string;
+  children: React.ReactNode;
+}) {
   return (
-    <div className="relative px-[5%] max-w-[1920px] mx-auto">{children}</div>
+    <div className={`relative px-[5%] max-w-[1920px] mx-auto ${className}`}>
+      {children}
+    </div>
   );
 }
