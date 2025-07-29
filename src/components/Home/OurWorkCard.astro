@@ -1,0 +1,64 @@
+---
+// Components
+import { Image } from "astro:assets";
+import { LinkSecondary } from "../ui";
+
+// Types
+type OurWorkType = {
+  logo: {
+    src: ImageMetadata;
+    alt: string;
+  };
+  heading: string[];
+  body: string;
+  mockupImages: {
+    mobile: { src: ImageMetadata; alt: string };
+    desktop: { src: ImageMetadata; alt: string };
+  };
+  href: string;
+  className: string;
+};
+
+const { logo, heading, body, mockupImages, href, className } =
+  Astro.props as OurWorkType;
+---
+
+<div
+  class={`flex flex-col lg:flex-row gap-16 lg:gap-24 shadow-2xl rounded-2xl px-8 lg:ps-24 lg:pe-0 ${className}`}
+>
+  <div class="flex-1 flex flex-col gap-8 py-24">
+    <Image src={logo.src} alt={logo.alt} />
+    <h3 class="text-dark-1 text-h4 font-semibold">
+      {
+        heading.map((text) => {
+          return (
+            <>
+              <span>{text}</span>
+              <br />
+            </>
+          );
+        })
+      }
+    </h3>
+    <p class="text-dark-2 text-body-base">{body}</p>
+    <LinkSecondary className="text-dark-1" arrowHex="#000000" href={href}
+      >Visit Site</LinkSecondary
+    >
+  </div>
+  <div
+    class="flex-1 relative pt-16 lg:pt-0 order-first lg:order-last overflow-x-clip"
+  >
+    <div class="lg:absolute self-start lg:w-[1000px] lg:top-16 h-full">
+      <Image
+        class="lg:h-3/4 lg:w-auto"
+        src={mockupImages.desktop.src}
+        alt={mockupImages.desktop.alt}
+      />
+    </div>
+    <Image
+      class="absolute -bottom-1/2 lg:-bottom-20 right-0 w-1/2 lg:w-[300px]"
+      src={mockupImages.mobile.src}
+      alt={mockupImages.mobile.alt}
+    />
+  </div>
+</div>

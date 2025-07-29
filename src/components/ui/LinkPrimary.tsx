@@ -1,12 +1,16 @@
-export default function ButtonPrimary({
-  children,
-  className,
-}: {
+type LinkPrimaryProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
   children: React.ReactNode;
   className?: string;
-}) {
+};
+
+export default function LinkPrimary({
+  children,
+  className = "",
+  ...props
+}: LinkPrimaryProps) {
   return (
-    <button
+    <a
+      {...props}
       className={`group rounded-4xl p-[2px] button-primary__border hover:cursor-pointer hover:shadow-md hover:scale-[101%] ${className}`}
     >
       <div className="bg-white rounded-4xl flex gap-2.5 items-center py-4 px-8">
@@ -20,15 +24,15 @@ export default function ButtonPrimary({
           viewBox="0 0 24 24"
           fill="none"
           stroke="#1d3557"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           className="lucide lucide-move-right-icon lucide-move-right button__arrow"
         >
           <path d="M18 8L22 12L18 16" />
           <path d="M2 12H22" />
         </svg>
       </div>
-    </button>
+    </a>
   );
 }

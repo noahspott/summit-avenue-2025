@@ -16,7 +16,6 @@ export default function AnimatedHeroLogo({
   className: string;
 }) {
   const targetRef = useRef(null);
-  // const { scrollY } = useScroll();
   const smoothScrollY = useSpring(scrollY, {
     stiffness: 100, // Lower = smoother
     damping: 20, // Higher = less bouncy
@@ -52,7 +51,10 @@ export default function AnimatedHeroLogo({
   );
 
   return (
-    <div ref={targetRef} className={`absolute ${className}`}>
+    <div
+      ref={targetRef}
+      className={`hidden absolute min-[1203px]:block ${className}`}
+    >
       <div className="relative w-[1000px] h-[1000px]">
         <motion.img
           src="src/assets/images/decorative/logo-light-blue.svg"

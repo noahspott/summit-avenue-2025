@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
+@import "./text-components.css";
+@import "./buttons.css";
 
 :root {
   --gradient-blue: linear-gradient(to bottom, #6c92c7, #1d3557);
@@ -14,6 +16,8 @@ html {
 @theme {
   --font-montserrat: "Montserrat", sans-serif;
   --font-inter: "Inter", sans-serif;
+
+  --font-heading: var(--font-montserrat);
 
   --font-weight-1: 400;
   --font-weight-2: 600;
@@ -39,23 +43,6 @@ html {
   --radius-card: 16px;
 }
 
-.link-underline {
-  position: relative;
-}
-.link-underline::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  height: 2px;
-  width: 0%;
-  background: var(--color-brand-orange-500);
-  transition: width 0.3s ease;
-}
-.link-underline:hover::after {
-  width: 100%;
-}
-
 .gradient-blue-text {
   background: var(--gradient-blue);
   -webkit-background-clip: text;
@@ -63,100 +50,4 @@ html {
 }
 .gradient-blue-bg {
   background: var(--gradient-blue);
-}
-
-/* Primary Button */
-.button-primary__border {
-  background: var(--gradient-blue);
-}
-.button-primary__border:hover {
-  background: var(--color-brand-orange-500);
-}
-.button-primary__text {
-  background: var(--gradient-blue);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.button-primary__border:hover .button-primary__text {
-  background: white;
-  -webkit-text-fill-color: var(--color-brand-orange-500);
-}
-.button__arrow {
-  position: relative;
-  left: 0;
-  transition: left 150ms;
-}
-.button-primary__border:hover .button__arrow {
-  stroke: var(--color-brand-orange-500);
-  left: 3px;
-}
-
-.button-secondary:hover .button__arrow {
-  left: 3px;
-}
-
-@layer components {
-  /* .heading-1 {
-    @apply text-1 
-  }
-  .heading-2 {
-    @apply text-2
-  }
-  .heading-3 {
-    @apply text-3
-  }
-  .heading-4 {
-    @apply text-4
-  }
-  .heading-5 {
-    @apply text-5
-  } */
-
-  .text-h1 {
-    @apply text-7xl;
-  }
-  .text-h2 {
-    @apply text-6xl;
-  }
-  .text-h3 {
-    @apply text-4xl;
-  }
-  .text-h4 {
-    @apply text-3xl;
-  }
-  .text-h5 {
-    @apply text-2xl;
-  }
-  .text-h6 {
-    @apply text-[22px] leading-tight;
-  }
-  .text-h7 {
-    @apply text-xl;
-  }
-  .text-h8 {
-    @apply text-lg;
-  }
-  .text-h9 {
-    @apply text-base;
-  }
-
-  .text-body-xs {
-    @apply text-base leading-normal;
-  }
-  .text-body-sm {
-    @apply text-lg leading-normal;
-  }
-  .text-body-base {
-    @apply text-xl leading-normal;
-  }
-  .text-body-md {
-    @apply text-[22px] leading-normal;
-  }
-  .text-body-lg {
-    @apply text-2xl leading-normal;
-  }
-
-  .text-link {
-    @apply text-xl;
-  }
 }

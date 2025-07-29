@@ -1,17 +1,21 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { Navbar } from "@/components/ui";
+import { Header } from "@/components/ui";
 import {
   HeroSection,
   ServicesSection,
   TestimonialsSection,
-} from "@/components/home";
+  OurWorkSection,
+  PricingSection,
+} from "@/components/Home";
 ---
 
 <Layout>
-  <Navbar />
+  <Header />
   <HeroSection />
   <ServicesSection />
   <TestimonialsSection />
+  <OurWorkSection />
+  <PricingSection />
   <section class="h-[2000px]"></section>
 </Layout>

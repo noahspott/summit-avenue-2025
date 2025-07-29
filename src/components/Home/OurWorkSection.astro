@@ -1,0 +1,97 @@
+---
+// Components
+import { Content } from "../ui";
+import OurWorkCard from "./OurWorkCard.astro";
+import OurWorkBackground from "../decorative/OurWorkBackground";
+
+// Images
+import {
+  thebenderzLogo,
+  thebenderzMockupMobile,
+  thebenderzMockupDesktop,
+  thebenderzUrl,
+  adartistryLogo,
+  adartistryMockupMobile,
+  adartistryMockupDesktop,
+  adartistryUrl,
+  sfhLogo,
+  sfhMockupMobile,
+  sfhMockupDesktop,
+  sfhUrl,
+} from "@/assets/data/portfolio";
+
+const work = [
+  {
+    logo: {
+      src: thebenderzLogo,
+      alt: "Logo for Philadelphia professional cover band, The Benderz",
+    },
+    heading: ["Philadelphia Cover Band", "Website Design and Development"],
+    body: "The Benderz wanted a fresh website to showcase their event schedule and attract more wedding and private event bookings. We built a fast, modern Astro web app with a headless CMS, making it easy for the band to update their calendar and connect with fans and clients.",
+    mockupImages: {
+      mobile: { src: thebenderzMockupMobile, alt: "" },
+      desktop: { src: thebenderzMockupDesktop, alt: "" },
+    },
+    href: thebenderzUrl,
+    className:
+      "bg-linear-320 lg:bg-linear-45 from-[#ffffff] from-75% to-[#0A8A71]",
+  },
+  {
+    logo: {
+      src: adartistryLogo,
+      alt: "Logo for Hair and Makeup Artist, AD Artistry",
+    },
+    heading: [
+      "Wedding Hair and Makeup Artist",
+      "Website Design and Development",
+    ],
+    body: "AD Artistry needed a modern, elegant website to attract bridal clients and showcase their beauty services. We created a clean, visually refined design tailored to the expectations of brides booking hair and makeup for their big day. The result is a site that feels both luxurious and approachable, helping the brand stand out in a competitive local market.",
+    mockupImages: {
+      mobile: { src: adartistryMockupMobile, alt: "" },
+      desktop: { src: adartistryMockupDesktop, alt: "" },
+    },
+    href: adartistryUrl,
+    className:
+      "bg-linear-320 lg:bg-linear-45 from-[#ffffff] from-75% to-[#C69E7A]",
+  },
+  {
+    logo: { src: sfhLogo, alt: "Logo for apparel brand, SFH" },
+    heading: ["Apparel / Lifestyle Brand", "Website Design and Development"],
+    body: "SFH needed a fresh website design to showcase their apparel and provide sponsors with a simple way to purchase event tickets. We designed and developed a custom site that integrates directly with the Square API, delivering a clean, responsive experience for both shoppers and sponsors.",
+    mockupImages: {
+      mobile: { src: sfhMockupMobile, alt: "" },
+      desktop: { src: sfhMockupDesktop, alt: "" },
+    },
+    href: sfhUrl,
+    className:
+      "bg-linear-320 lg:bg-linear-45 from-[#ffffff] from-75% to-[#000000]",
+  },
+];
+---
+
+<section class="py-24 relative overflow-clip">
+  <OurWorkBackground client:load />
+  <Content>
+    <div class="flex flex-col gap-24">
+      <div class="flex flex-col items-end text-end gap-2">
+        <h2 class="text-h4 font-montserrat font-2 text-dark-2">Our Work</h2>
+        <p class="text-h2 font-montserrat font-2 text-dark-1">
+          Made by <br class="min-[433px]:hidden block" /><span
+            class="gradient-blue-text">Summit Avenue</span
+          >
+        </p>
+      </div>
+      <ul class="flex flex-col gap-24">
+        {
+          work.map((work, index) => {
+            return (
+              <li>
+                <OurWorkCard {...work} />
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+  </Content>
+</section>
