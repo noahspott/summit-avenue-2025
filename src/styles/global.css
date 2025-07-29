@@ -17,6 +17,8 @@ html {
   --font-montserrat: "Montserrat", sans-serif;
   --font-inter: "Inter", sans-serif;
 
+  --font-heading: var(--font-montserrat);
+
   --font-weight-1: 400;
   --font-weight-2: 600;
 

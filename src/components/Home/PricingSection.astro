@@ -1,0 +1,120 @@
+---
+// Components
+import { Content } from "@/components/ui";
+import { BackgroundLogo } from "@/components/decorative";
+import { Monitor, FileText, Smartphone } from "lucide-react";
+import { ButtonPrimary } from "@/components/ui";
+
+const pricingPackages = [
+  {
+    Icon: Monitor,
+    name: "Standard Website",
+    price: 2000,
+    isMonthly: false,
+    description:
+      "Perfect for growing companies needing a custom site to showcase their brand.",
+    features1: [
+      "Custom 5-page design",
+      "Fully Responsive",
+      "SEO-friendly build",
+    ],
+    features2: ["$50/year for hosting", "$100/year for maintenance"],
+    isMostPopular: false,
+  },
+  {
+    Icon: FileText,
+    name: "Landing Page",
+    price: 1000,
+    isMonthly: false,
+    description:
+      "Ideal for startups, freelancers, and businesses launching campaigns or promoting services.",
+    features1: [
+      "Custom 5-page design",
+      "Fully Responsive",
+      "SEO-friendly build",
+    ],
+    features2: ["$50/year for hosting", "$100/year for maintenance"],
+    isMostPopular: false,
+  },
+  {
+    Icon: Smartphone,
+    name: "Subscription",
+    price: 150,
+    isMonthly: true,
+    description:
+      "Perfect for growing companies needing a custom site to showcase their brand.",
+    features1: [
+      "Custom 5-page design",
+      "Fully Responsive",
+      "SEO-friendly build",
+    ],
+    features2: ["Hosting & Maintenance Included", "Unlimited Content Updates"],
+    isMostPopular: false,
+  },
+];
+---
+
+<section class="py-24 relative overflow-clip">
+  <BackgroundLogo client:load />
+  <Content>
+    <div class="flex flex-col gap-12">
+      <div class="flex flex-col gap-2">
+        <h2 class="text-h4 font-montserrat font-2 text-dark-2">Pricing</h2>
+        <p class="text-h2 font-montserrat font-2 text-dark-1">Our Packages</p>
+      </div>
+      <ul class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        {
+          pricingPackages.map((pricingPackage) => {
+            const {
+              Icon,
+              name,
+              price,
+              isMonthly,
+              description,
+              features1,
+              features2,
+              isMostPopular,
+            } = pricingPackage;
+            return (
+              <li class="p-8 pt-16 flex flex-col gap-12 bg-white/60 backdrop-blur-lg shadow-xl rounded-card self-start">
+                <div class="flex gap-4">
+                  <Icon className="text-dark-3 size-8" />
+                  <h3 class="text-h4 text-dark-1">{name}</h3>
+                </div>
+                <p class="text-h2 text-dark-1">
+                  ${price}{" "}
+                  {isMonthly && <span class="text-h4 text-dark-2">/mo</span>}
+                </p>
+                <p class="text-body-md text-dark-2">{description}</p>
+                <div class="h-px w-full bg-dark-3" />
+                <div class="flex flex-col gap-4">
+                  <h4 class="uppercase font-semibold text-dark-1 text-body-xs">
+                    Design and Development
+                  </h4>
+                  <ul class="flex flex-col gap-4">
+                    {features1.map((feature) => (
+                      <li class="text-dark-2 text-body-base">{feature}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div class="flex flex-col gap-4">
+                  <h4 class="uppercase font-semibold text-dark-1 text-body-xs">
+                    Ongoing Support
+                  </h4>
+                  <ul class="flex flex-col gap-4">
+                    {features2.map((feature) => (
+                      <li class="text-dark-2 text-body-base">{feature}</li>
+                    ))}
+                  </ul>
+                </div>
+                <ButtonPrimary className="self-start">
+                  Let's get started
+                </ButtonPrimary>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+  </Content>
+</section>
