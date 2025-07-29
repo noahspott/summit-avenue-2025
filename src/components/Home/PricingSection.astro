@@ -49,20 +49,24 @@ const pricingPackages = [
       "SEO-friendly build",
     ],
     features2: ["Hosting & Maintenance Included", "Unlimited Content Updates"],
-    isMostPopular: false,
+    isMostPopular: true,
   },
 ];
 ---
 
 <section class="py-24 relative overflow-clip">
-  <BackgroundLogo client:load />
+  <div class="sticky top-0">
+    <div class="absolute right-32 top-32">
+      <BackgroundLogo className="top-0" client:load />
+    </div>
+  </div>
   <Content>
     <div class="flex flex-col gap-12">
       <div class="flex flex-col gap-2">
         <h2 class="text-h4 font-montserrat font-2 text-dark-2">Pricing</h2>
         <p class="text-h2 font-montserrat font-2 text-dark-1">Our Packages</p>
       </div>
-      <ul class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+      <ul class="flex flex-col xl:flex-row gap-4">
         {
           pricingPackages.map((pricingPackage) => {
             const {
@@ -76,10 +80,19 @@ const pricingPackages = [
               isMostPopular,
             } = pricingPackage;
             return (
-              <li class="p-8 pt-16 flex flex-col gap-12 bg-white/60 backdrop-blur-lg shadow-xl rounded-card self-start">
-                <div class="flex gap-4">
-                  <Icon className="text-dark-3 size-8" />
-                  <h3 class="text-h4 text-dark-1">{name}</h3>
+              <li class="flex-1 p-8 pt-8 pb-16 flex flex-col gap-12 bg-white/60 backdrop-blur-lg shadow-xl rounded-card max-w-[500px]">
+                <div class="flex flex-col">
+                  <div class="h-16 self-end">
+                    {isMostPopular && (
+                      <p class="bg-brand-orange-500/20 text-brand-orange-500 text-body-xs font-semibold rounded-full px-4 py-2">
+                        Most Popular!
+                      </p>
+                    )}
+                  </div>
+                  <div class="flex gap-4">
+                    <Icon className="text-dark-3 size-8" />
+                    <h3 class="text-h4 text-dark-1">{name}</h3>
+                  </div>
                 </div>
                 <p class="text-h2 text-dark-1">
                   ${price}{" "}

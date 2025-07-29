@@ -2,16 +2,20 @@
 import { useScroll, useTransform, motion } from "motion/react";
 import { useEffect, useRef } from "react";
 
-export default function BackgroundLogo() {
+export default function BackgroundLogo({
+  className = "",
+}: {
+  className?: string;
+}) {
   const targetRef = useRef(null);
   const { scrollY } = useScroll();
 
-  useEffect(() => {
-    scrollY.on("change", (latest) => {
-      console.log("ScrollY:", latest);
-      console.log("x1", x1);
-    });
-  }, [scrollY]);
+  // useEffect(() => {
+  //   scrollY.on("change", (latest) => {
+  //     console.log("ScrollY:", latest);
+  //     console.log("x1", x1);
+  //   });
+  // }, [scrollY]);
 
   const val1 = 100;
   const val2 = 200;
@@ -29,7 +33,7 @@ export default function BackgroundLogo() {
   return (
     <div
       ref={targetRef}
-      className="absolute bottom-0 right-24 w-[650px] h-[500px]"
+      className={`absolute bottom-0 right-24 w-[650px] h-[500px] ${className}`}
     >
       <motion.div
         className="absolute -top-16 -right-16 w-[650px]"
