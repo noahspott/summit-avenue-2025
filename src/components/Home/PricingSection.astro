@@ -3,7 +3,8 @@
 import { Content } from "@/components/ui";
 import { BackgroundLogo } from "@/components/decorative";
 import { Monitor, FileText, Smartphone } from "lucide-react";
-import { ButtonPrimary } from "@/components/ui";
+import PricingCard from "./PricingCard.astro";
+import { AnimateOnInView } from "@/components/decorative";
 
 const pricingPackages = [
   {
@@ -49,67 +50,31 @@ const pricingPackages = [
       "SEO-friendly build",
     ],
     features2: ["Hosting & Maintenance Included", "Unlimited Content Updates"],
-    isMostPopular: false,
+    isMostPopular: true,
   },
 ];
 ---
 
 <section class="py-24 relative overflow-clip">
-  <BackgroundLogo client:load />
+  <div class="sticky top-0">
+    <div class="absolute right-32 top-32">
+      <BackgroundLogo className="top-0" client:load />
+    </div>
+  </div>
   <Content>
     <div class="flex flex-col gap-12">
       <div class="flex flex-col gap-2">
         <h2 class="text-h4 font-montserrat font-2 text-dark-2">Pricing</h2>
         <p class="text-h2 font-montserrat font-2 text-dark-1">Our Packages</p>
       </div>
-      <ul class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+      <ul class="flex flex-col xl:flex-row gap-4">
         {
-          pricingPackages.map((pricingPackage) => {
-            const {
-              Icon,
-              name,
-              price,
-              isMonthly,
-              description,
-              features1,
-              features2,
-              isMostPopular,
-            } = pricingPackage;
+          pricingPackages.map((pricingPackage, index) => {
             return (
-              <li class="p-8 pt-16 flex flex-col gap-12 bg-white/60 backdrop-blur-lg shadow-xl rounded-card self-start">
-                <div class="flex gap-4">
-                  <Icon className="text-dark-3 size-8" />
-                  <h3 class="text-h4 text-dark-1">{name}</h3>
-                </div>
-                <p class="text-h2 text-dark-1">
-                  ${price}{" "}
-                  {isMonthly && <span class="text-h4 text-dark-2">/mo</span>}
-                </p>
-                <p class="text-body-md text-dark-2">{description}</p>
-                <div class="h-px w-full bg-dark-3" />
-                <div class="flex flex-col gap-4">
-                  <h4 class="uppercase font-semibold text-dark-1 text-body-xs">
-                    Design and Development
-                  </h4>
-                  <ul class="flex flex-col gap-4">
-                    {features1.map((feature) => (
-                      <li class="text-dark-2 text-body-base">{feature}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div class="flex flex-col gap-4">
-                  <h4 class="uppercase font-semibold text-dark-1 text-body-xs">
-                    Ongoing Support
-                  </h4>
-                  <ul class="flex flex-col gap-4">
-                    {features2.map((feature) => (
-                      <li class="text-dark-2 text-body-base">{feature}</li>
-                    ))}
-                  </ul>
-                </div>
-                <ButtonPrimary className="self-start">
-                  Let's get started
-                </ButtonPrimary>
+              <li>
+                <AnimateOnInView delay={0.1 * index} client:load>
+                  <PricingCard {...pricingPackage} />
+                </AnimateOnInView>
               </li>
             );
           })

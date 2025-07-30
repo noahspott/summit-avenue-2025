@@ -43,6 +43,16 @@ html {
   --radius-card: 16px;
 }
 
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  text-decoration: solid;
+  text-decoration-line: underline;
+  text-decoration-color: var(--color-brand-orange-500);
+}
+
 .gradient-blue-text {
   background: var(--gradient-blue);
   -webkit-background-clip: text;

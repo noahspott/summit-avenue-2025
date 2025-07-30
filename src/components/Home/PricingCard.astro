@@ -1,0 +1,77 @@
+---
+import type { LucideIcon } from "lucide-react"; // if you're using Lucide icons
+import { ButtonPrimary } from "@/components/ui";
+
+export type PricingPlan = {
+  Icon: LucideIcon; // or React.ComponentType if not using Lucide
+  name: string;
+  price: number;
+  isMonthly: boolean;
+  description: string;
+  features1: string[];
+  features2: string[];
+  isMostPopular: boolean;
+};
+
+const {
+  Icon,
+  name,
+  price,
+  isMonthly,
+  description,
+  features1,
+  features2,
+  isMostPopular,
+} = Astro.props as PricingPlan;
+---
+
+<div
+  class="flex-1 p-8 pt-8 pb-16 flex flex-col gap-12 bg-white/60 backdrop-blur-lg shadow-xl rounded-card max-w-[500px]"
+>
+  <div class="flex flex-col">
+    <div class="h-16 self-end">
+      {
+        isMostPopular && (
+          <p class="bg-brand-orange-500/20 text-brand-orange-500 text-body-xs font-semibold rounded-full px-4 py-2">
+            Most Popular!
+          </p>
+        )
+      }
+    </div>
+    <div class="flex gap-4">
+      <Icon className="text-dark-3 size-8" />
+      <h3 class="text-h4 text-dark-1">{name}</h3>
+    </div>
+  </div>
+  <p class="text-h2 text-dark-1">
+    ${price}{" "}
+    {isMonthly && <span class="text-h4 text-dark-2">/mo</span>}
+  </p>
+  <p class="text-body-md text-dark-2">{description}</p>
+  <div class="h-px w-full bg-dark-3"></div>
+  <div class="flex flex-col gap-4">
+    <h4 class="uppercase font-semibold text-dark-1 text-body-xs">
+      Design and Development
+    </h4>
+    <ul class="flex flex-col gap-4">
+      {
+        features1.map((feature) => (
+          <li class="text-dark-2 text-body-base">{feature}</li>
+        ))
+      }
+    </ul>
+  </div>
+  <div class="flex flex-col gap-4">
+    <h4 class="uppercase font-semibold text-dark-1 text-body-xs">
+      Ongoing Support
+    </h4>
+    <ul class="flex flex-col gap-4">
+      {
+        features2.map((feature) => (
+          <li class="text-dark-2 text-body-base">{feature}</li>
+        ))
+      }
+    </ul>
+  </div>
+  <ButtonPrimary className="self-start"> Let's get started </ButtonPrimary>
+</div>

@@ -1,0 +1,93 @@
+---
+import { Content } from "@/components/ui";
+import { motion } from "motion/react";
+import { AnimateOnInView } from "../decorative";
+
+const faqs = [
+  {
+    question: "I don't have a logo or branding—can I still get a website?",
+    answer:
+      "Yes. We can help with logo design, brand colors, and fonts to give your business a professional look online.",
+  },
+  {
+    question: "Will my site be mobile-friendly?",
+    answer:
+      "Absolutely. Every site we build is responsive and optimized for performance across devices.",
+  },
+  {
+    question: "Do you offer ongoing maintenance?",
+    answer:
+      "Yes. We offer affordable maintenance plans that include updates, backups, and technical support.",
+  },
+  {
+    question: "Can you help with content and branding too?",
+    answer:
+      "Definitely. We offer copywriting, graphic design, and basic visual branding as part of our services.",
+  },
+  {
+    question: "Do you offer payment plans?",
+    answer:
+      "Yes. We can help with logo design, brand colors, and fonts to give your business a professional look online.",
+  },
+  {
+    question: "What if I don't have much content yet?",
+    answer:
+      "No problem. We can help write or improve your content so it clearly explains what you do and helps convert visitors into customers.",
+  },
+  {
+    question: "I'm on a tight budget—can you work with that?",
+    answer:
+      "We offer flexible packages and payment plans designed to help small businesses get online without breaking the bank.",
+  },
+  {
+    question: "What happens after the site is launched?",
+    answer:
+      "We offer maintenance and support plans, or you can hire us for updates as needed. You'll never be left in the dark.",
+  },
+];
+---
+
+<section class="py-24">
+  <Content>
+    <motion.div
+      className="-mx-[6%] md:-mx-0 px-[5%] py-24 relative bg-black overflow-clip rounded-card"
+      client:load
+    >
+      <div
+        class="absolute w-full h-full object-cover top-0 left-0 bg-gradient-to-b from-deep-blue-500 to-deep-blue-500/50"
+      >
+      </div>
+      <div class="relative z-10 flex flex-col gap-12">
+        <div class="flex flex-col gap-2">
+          <h2 class="text-h2 font-2 text-light-1">FAQs</h2>
+        </div>
+        <ul class="flex flex-col gap-12">
+          {
+            faqs.map((faq) => {
+              return (
+                <li>
+                  <AnimateOnInView client:load>
+                    <div class=" flex flex-col gap-4">
+                      <h3 class="text-light-1 text-h3 font-montserrat font-2">
+                        {faq.question}
+                      </h3>
+                      <p class="text-light-1 text-body-base font-inter">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </AnimateOnInView>
+                </li>
+              );
+            })
+          }
+        </ul>
+      </div>
+    </motion.div>
+  </Content>
+</section>
+
+<style>
+  .icon {
+    stroke: var(--color-off-white);
+  }
+</style>

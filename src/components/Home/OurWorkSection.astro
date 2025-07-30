@@ -3,6 +3,7 @@
 import { Content } from "../ui";
 import OurWorkCard from "./OurWorkCard.astro";
 import OurWorkBackground from "../decorative/OurWorkBackground";
+import { AnimateOnInView } from "../decorative";
 
 // Images
 import {
@@ -18,7 +19,7 @@ import {
   sfhMockupMobile,
   sfhMockupDesktop,
   sfhUrl,
-} from "@/assets/data/portfolio";
+} from "@/data/portfolio";
 
 const work = [
   {
@@ -86,7 +87,9 @@ const work = [
           work.map((work, index) => {
             return (
               <li>
-                <OurWorkCard {...work} />
+                <AnimateOnInView delay={0.2} client:load>
+                  <OurWorkCard {...work} />
+                </AnimateOnInView>
               </li>
             );
           })

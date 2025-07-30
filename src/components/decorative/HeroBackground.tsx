@@ -12,7 +12,7 @@ export default function HeroBackground() {
       <BackgroundMountainParallax scrollY={scrollY} />
       <AnimatedHeroLogo
         scrollY={scrollY}
-        className="z-10 right-[70px] -top-[70px] opacity-90"
+        className="z-10 right-0 sm:right-[70px] -top-[60px] md:-top-[70px] opacity-90"
       />
     </>
   );

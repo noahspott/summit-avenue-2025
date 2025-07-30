@@ -1,35 +1,34 @@
 ---
-// Lib
-import { motion } from "motion/react";
-
 // Components
-import { Image } from "astro:assets";
 import { Content } from "@/components/ui";
 import { BackgroundLogo } from "@/components/decorative";
+import { Star } from "lucide-react";
+import { Image } from "astro:assets";
+import { AnimateOnInView } from "@/components/decorative";
 
 // Images
-import bgLogo1 from "@/assets/images/decorative/testimonial-bg-logo-1.svg";
-import bgLogo2 from "@/assets/images/decorative/testimonial-bg-logo-2.svg";
-import bgLogo3 from "@/assets/images/decorative/testimonial-bg-logo-3.svg";
+import angelique from "@/assets/images/testimonials/angelique.jpg";
+import janet from "@/assets/images/testimonials/janet.webp";
+import bryan from "@/assets/images/testimonials/bryan.jpg";
 
 const testimonials = [
   {
     body: "Working with Summit Avenue Web Solutions was an amazing experience! Noah exceeded my expectations in every way—easy to work with, attentive to my needs, and delivered a site beyond my imagination with impressive attention to detail. I highly recommend Summit Avenue for anyone seeking exceptional design and reliable web solutions.",
     author: "Angelique Buckley",
-    location: "Philadelphia, PA",
-    image: "",
+    location: "The Benderz • Philadelphia, PA",
+    image: angelique,
   },
   {
-    body: "Noah Spott is the consummate professional. Very knowledgeable in not just the technical aspects of building your site, but the abstract ideas in branding and visual appeal as well.",
-    author: "Pete Vigliotti",
-    location: "Bear, DE",
-    image: "",
+    body: "Noah took our old business website and completely revamped it. Now we have an amazing new bada** look. Super professional, delivered more than promised and is consistently improving it. Definitely recommend!!!",
+    author: "Bryan Weiss",
+    location: "SFH • Cherry Hill, NJ",
+    image: bryan,
   },
   {
     body: "Great professional web design.  Noah's work is excellent and the finished product was just as requested.",
     author: "Janet Jackson",
-    location: "Stroudsburg, PA",
-    image: "",
+    location: "JacksonLaw • Stroudsburg, PA",
+    image: janet,
   },
 ];
 ---
@@ -46,19 +45,47 @@ const testimonials = [
       </div>
       <ul class="grid grid-cols-1 lg:grid-cols-3 gap-4">
         {
-          testimonials.map((testimonial) => {
+          testimonials.map((testimonial, index) => {
             return (
-              <li class="p-8 flex flex-col gap-8 bg-white/60 backdrop-blur-lg shadow-xl rounded-card self-start">
-                <p class="font-inter leading-6 font-1 text-[96px] text-light-blue-500 relative top-6">
-                  "
-                </p>
-                <p class="text-body-base font-montserrat">{testimonial.body}</p>
-                <div class="flex flex-col gap-1">
-                  <p class="text-body-base font-inter font-2">
-                    {testimonial.author}
-                  </p>
-                  <p class="text-body-sm font-inter">{testimonial.location}</p>
-                </div>
+              <li class="self-start">
+                <AnimateOnInView delay={0.1 * index} client:load>
+                  <div class="p-8 flex flex-col gap-8 bg-white/60 backdrop-blur-lg shadow-xl rounded-card">
+                    <p class="font-inter leading-6 font-1 text-[96px] text-light-blue-500 relative top-6">
+                      "
+                    </p>
+                    <p class="text-body-base font-montserrat">
+                      {testimonial.body}
+                    </p>
+                    <div class="flex gap-4">
+                      {Array(5)
+                        .fill(0)
+                        .map(() => (
+                          <Star
+                            className="text-brand-orange-500"
+                            fill="#f4a261"
+                          />
+                        ))}
+                    </div>
+                    <div class="flex gap-4">
+                      <Image
+                        src={testimonial.image}
+                        alt=""
+                        class="size-16 rounded-full border border-brand-orange-500"
+                        loading={"lazy"}
+                        decoding="async"
+                      />
+
+                      <div class="flex flex-col gap-1">
+                        <p class="text-body-base font-inter font-2">
+                          {testimonial.author}
+                        </p>
+                        <p class="text-body-sm font-inter">
+                          {testimonial.location}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </AnimateOnInView>
               </li>
             );
           })
