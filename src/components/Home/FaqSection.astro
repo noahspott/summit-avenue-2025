@@ -1,10 +1,7 @@
 ---
-import { Content, ButtonSecondary } from "@/components/ui";
+import { Content } from "@/components/ui";
 import { motion } from "motion/react";
-import { Image } from "astro:assets";
-
-// Images
-import background from "@/assets/images/decorative/services-section-bg.png";
+import { AnimateOnInView } from "../decorative";
 
 const faqs = [
   {
@@ -68,13 +65,17 @@ const faqs = [
           {
             faqs.map((faq) => {
               return (
-                <li class=" flex flex-col gap-4">
-                  <h3 class="text-light-1 text-h3 font-montserrat font-2">
-                    {faq.question}
-                  </h3>
-                  <p class="text-light-1 text-body-base font-inter">
-                    {faq.answer}
-                  </p>
+                <li>
+                  <AnimateOnInView client:load>
+                    <div class=" flex flex-col gap-4">
+                      <h3 class="text-light-1 text-h3 font-montserrat font-2">
+                        {faq.question}
+                      </h3>
+                      <p class="text-light-1 text-body-base font-inter">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </AnimateOnInView>
                 </li>
               );
             })

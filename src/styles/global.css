@@ -48,8 +48,9 @@ html {
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-brand-orange-500);
-  outline-offset: 6px;
+  text-decoration: solid;
+  text-decoration-line: underline;
+  text-decoration-color: var(--color-brand-orange-500);
 }
 
 .gradient-blue-text {

@@ -53,7 +53,7 @@ export default function ContactForm({
       )}
       onSubmit={(e) => submitHandler(e)}
     >
-      <div className="flex flex-col gap-8 p-8">
+      <div className="flex flex-col gap-8 py-4 px-2 sm:px-8 sm:py-16">
         <div className="flex flex-col gap-8 md:flex-row">
           <FormInput
             label="name"

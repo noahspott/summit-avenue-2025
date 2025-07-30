@@ -48,10 +48,10 @@
     @apply text-sm sm:text-base leading-normal;
   }
   .text-body-sm {
-    @apply text-lg leading-normal;
+    @apply text-base sm:text-lg leading-normal;
   }
   .text-body-base {
-    @apply text-xl leading-normal;
+    @apply text-lg sm:text-xl leading-normal;
   }
   .text-body-md {
     @apply text-[22px] leading-normal;
@@ -61,6 +61,6 @@
   }
 
   .text-link {
-    @apply text-xl;
+    @apply text-lg sm:text-xl;
   }
 }

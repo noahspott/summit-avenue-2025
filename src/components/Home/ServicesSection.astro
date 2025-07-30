@@ -2,6 +2,7 @@
 import { Content, ButtonSecondary } from "@/components/ui";
 import { motion } from "motion/react";
 import { Image } from "astro:assets";
+import { AnimateOnInView } from "@/components/decorative";
 
 // Images
 import background from "@/assets/images/decorative/services-section-bg.png";
@@ -80,24 +81,28 @@ const services = [
         </div>
         <ul class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
           {
-            services.map((service) => {
+            services.map((service, index) => {
               return (
-                <li class="border border-light-blue-500/30 rounded-card bg-light-blue-500/30 backdrop-blur-lg flex flex-col gap-4 p-8">
-                  <Image
-                    src={service.icon}
-                    alt=""
-                    class="size-12 lg:size-14 "
-                  />
-                  <h3 class="text-light-1 text-h3 font-montserrat font-2 underline underline-offset-4 decoration-brand-orange-500">
-                    {service.title}
-                  </h3>
-                  <p class="text-light-1 text-body-base font-inter">
-                    {service.description}
-                  </p>
-                  {/* <ButtonSecondary href={service.href} className="self-start">
+                <li class="flex">
+                  <AnimateOnInView delay={0.1 * index} client:load>
+                    <div class="h-full border border-light-blue-500/30 rounded-card bg-light-blue-500/30 backdrop-blur-lg flex flex-col gap-4 p-8">
+                      <Image
+                        src={service.icon}
+                        alt=""
+                        class="size-12 lg:size-14 "
+                      />
+                      <h3 class="text-light-1 text-h3 font-montserrat font-2 underline underline-offset-4 decoration-brand-orange-500">
+                        {service.title}
+                      </h3>
+                      <p class="text-light-1 text-body-base font-inter">
+                        {service.description}
+                      </p>
+                      {/* <ButtonSecondary href={service.href} className="self-start">
                     Learn More
                   </ButtonSecondary> */}
-                  <div class="p-1" />
+                      <div class="p-1" />
+                    </div>
+                  </AnimateOnInView>
                 </li>
               );
             })

@@ -6,6 +6,7 @@ import { Content, Section } from "@/components/ui";
 import ContactForm from "./ContactForm";
 import SuccessMessage from "./SuccessMessage";
 import ErrorMessage from "./ErrorMessage";
+import { AnimateOnInView } from "../decorative";
 
 // Images
 import bgImage from "@/assets/images/decorative/contact-section-bg.png";
@@ -30,10 +31,12 @@ export default function ContactSection() {
           </div>
           <div className="w-full max-w-2xl">
             {loadingState === "idle" && (
-              <ContactForm
-                loadingState={loadingState}
-                setLoadingState={setLoadingState}
-              />
+              <AnimateOnInView>
+                <ContactForm
+                  loadingState={loadingState}
+                  setLoadingState={setLoadingState}
+                />
+              </AnimateOnInView>
             )}
 
             {loadingState === "success" && <SuccessMessage />}

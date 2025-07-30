@@ -51,27 +51,26 @@ export default function AnimatedHeroLogo({
   );
 
   return (
-    <div
-      ref={targetRef}
-      className={`hidden absolute min-[1203px]:block ${className}`}
-    >
-      <div className="relative w-[1000px] h-[1000px]">
-        <motion.img
-          src="src/assets/images/decorative/logo-light-blue.svg"
-          className="absolute w-[1000px] h-[1000px]"
-          alt=""
-          style={{
-            x: x1,
-            y: y1,
-            opacity: opacity1,
-            width: size1,
-            height: size1,
-            willChange: "transform, opacity",
-          }}
-        />
+    <div ref={targetRef} className={`absolute ${className}`}>
+      <div className="relative size-[400px] min-[768px]:size-[600px] min-[1024px]:size-[800px] min-[1203px]:size-[1000px]">
+        <div className="opacity-50 min-[1203px]:opacity-100">
+          <motion.img
+            src="src/assets/images/decorative/logo-light-blue.svg"
+            className="absolute min-[1203px]:size-[1000px]"
+            alt=""
+            style={{
+              x: x1,
+              y: y1,
+              opacity: opacity1,
+              width: size1,
+              height: size1,
+              willChange: "transform, opacity",
+            }}
+          />
+        </div>
         <motion.img
           src="src/assets/images/decorative/logo-mountain.svg"
-          className={`absolute w-[1000px] h-[1000px] mix-blend-screen`}
+          className={`absolute size-[1000px] mix-blend-screen hidden min-[1203px]:block`}
           alt=""
           style={{
             x: x2,
@@ -82,7 +81,7 @@ export default function AnimatedHeroLogo({
         />
         <motion.img
           src="src/assets/images/decorative/logo-white.svg"
-          className={`absolute w-[1000px] h-[1000px]`}
+          className={`absolute min-[1203px]:size-[1000px]`}
           alt=""
           style={{
             x: x2,
