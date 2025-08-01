@@ -11,10 +11,10 @@ export default function LinkPrimary({
   return (
     <a
       {...props}
-      className={`group rounded-4xl p-[2px] button-primary__border hover:cursor-pointer hover:shadow-md hover:scale-[101%] ${className}`}
+      className={`group rounded-4xl p-[2px] gradient-blue-bg hover:cursor-pointer hover:shadow-md hover:scale-[101%] ${className}`}
     >
-      <div className="bg-white rounded-4xl flex gap-2.5 items-center py-4 px-8">
-        <div className="group-hover:cursor-pointer text-lg sm:text-xl font-montserrat font-2 rounded-4xl button-primary__text">
+      <div className="rounded-4xl flex gap-2.5 items-center py-4 px-8">
+        <div className="text-white group-hover:cursor-pointer text-lg sm:text-xl font-montserrat font-2 rounded-4xl">
           {children}
         </div>
         <svg
@@ -23,7 +23,7 @@ export default function LinkPrimary({
           height="24"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="#1d3557"
+          stroke="#ffffff"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"

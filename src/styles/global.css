@@ -18,6 +18,7 @@ html {
   --font-inter: "Inter", sans-serif;
 
   --font-heading: var(--font-montserrat);
+  --font-body: var(--font-inter);
 
   --font-weight-1: 300;
   --font-weight-2: 600;
@@ -30,6 +31,10 @@ html {
   --color-light-blue-100: #f7fbff;
 
   --color-brand-orange-500: #f4a261;
+
+  --color-primary: var(--color-deep-blue-500);
+  --color-secondary: #ffffff;
+  --color-accent: var(--color-brand-orange-500);
 
   --color-off-white: #f8f8f8;
 

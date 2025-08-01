@@ -81,7 +81,7 @@ export default function AnimatedHeroLogo({
         />
         <motion.img
           src="src/assets/images/decorative/logo-white.svg"
-          className={`absolute min-[1203px]:size-[1000px]`}
+          className={`absolute hidden min-[1203px]:block  min-[1203px]:size-[1000px]`}
           alt=""
           style={{
             x: x2,

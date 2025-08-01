@@ -5,6 +5,10 @@ export interface Link {
 
 export const LINKS: Link[] = [
   {
+    display: "Home",
+    href: "/",
+  },
+  {
     display: "Work",
     href: "/work",
   },

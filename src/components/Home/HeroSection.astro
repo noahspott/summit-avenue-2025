@@ -4,7 +4,7 @@ import { HeroBackground } from "../decorative";
 import { motion } from "motion/react";
 ---
 
-<section class="py-40 md:py-64 relative overflow-clip">
+<section class="py-48 md:py-64 relative overflow-clip">
   <HeroBackground client:load />
   <Content>
     <motion.div
@@ -14,7 +14,7 @@ import { motion } from "motion/react";
       }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.2, delay: 0.1 }}
-      className="mx-auto max-w-[1280px] relative flex flex-col gap-8 z-50 text-center sm:text-left items-center sm:items-start"
+      className="mx-auto max-w-[1280px] relative flex flex-col gap-8 z-40 text-center sm:text-left items-center sm:items-start"
       client:load
     >
       <h1 class="text-h1">
