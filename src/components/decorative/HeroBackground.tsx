@@ -1,19 +1,32 @@
-import { useScroll } from "motion/react";
+import { useScroll, motion } from "motion/react";
 import BackgroundRectangles from "./BackgroundRectangles";
 import BackgroundMountainParallax from "./BackgroundMountainParallax";
 import AnimatedHeroLogo from "./AnimatedHeroLogo";
+import AnimateIn from "./AnimateIn";
 
 export default function HeroBackground() {
   const { scrollY } = useScroll();
 
   return (
     <>
-      <BackgroundRectangles scrollY={scrollY} className="z-20" />
-      <BackgroundMountainParallax scrollY={scrollY} />
-      <AnimatedHeroLogo
-        scrollY={scrollY}
-        className="z-10 right-0 sm:right-[70px] -top-[60px] md:-top-[70px] opacity-90"
-      />
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+        <BackgroundRectangles scrollY={scrollY} className="z-20" />
+      </motion.div>
+
+      <AnimateIn>
+        <BackgroundMountainParallax scrollY={scrollY} />
+      </AnimateIn>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.5 }}
+        transition={{ delay: 0.2 }}
+      >
+        <AnimatedHeroLogo
+          scrollY={scrollY}
+          className="z-10 right-0 sm:right-[70px] -top-[60px] md:-top-[70px]"
+        />
+      </motion.div>
     </>
   );
 }

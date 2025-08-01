@@ -17,7 +17,7 @@ import type { FormState } from "@/components/contact-form/types";
 export default function ContactSection() {
   const [loadingState, setLoadingState] = useState<FormState>("idle");
   return (
-    <Section className="relative">
+    <Section className="relative" id="contact-section">
       <img
         src={bgImage.src}
         alt=""

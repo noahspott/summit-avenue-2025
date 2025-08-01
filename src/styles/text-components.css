@@ -17,7 +17,7 @@
 
 @layer components {
   .text-h1 {
-    @apply font-semibold font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl;
+    @apply font-light font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl;
   }
   .text-h2 {
     @apply font-semibold font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
@@ -45,22 +45,22 @@
   }
 
   .text-body-xs {
-    @apply text-sm sm:text-base leading-normal;
+    @apply font-1 text-sm sm:text-base leading-normal;
   }
   .text-body-sm {
-    @apply text-base sm:text-lg leading-normal;
+    @apply font-1 text-base sm:text-lg leading-normal;
   }
   .text-body-base {
-    @apply text-lg sm:text-xl leading-normal;
+    @apply font-1 text-lg sm:text-xl leading-relaxed;
   }
   .text-body-md {
-    @apply text-[22px] leading-normal;
+    @apply font-1 text-[22px] leading-normal;
   }
   .text-body-lg {
-    @apply text-xl sm:text-2xl leading-normal;
+    @apply font-1 text-xl sm:text-2xl leading-normal;
   }
 
   .text-link {
-    @apply text-lg sm:text-xl;
+    @apply font-1 text-lg tracking-wide sm:text-xl;
   }
 }

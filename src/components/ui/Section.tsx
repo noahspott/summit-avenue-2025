@@ -1,9 +1,14 @@
 export default function Section({
   children,
   className,
+  ...props
 }: {
   children?: React.ReactNode;
   className?: string;
-}) {
-  return <section className={`py-24 ${className}`}>{children}</section>;
+} & React.HTMLAttributes<HTMLElement>) {
+  return (
+    <section className={`py-24 ${className}`} {...props}>
+      {children}
+    </section>
+  );
 }

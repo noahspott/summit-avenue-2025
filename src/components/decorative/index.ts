@@ -4,3 +4,4 @@ export { default as BackgroundMountainParallax } from "./BackgroundMountainParal
 export { default as HeroBackground } from "./HeroBackground";
 export { default as BackgroundLogo } from "./BackgroundLogo";
 export { default as AnimateOnInView } from "./AnimateOnInView";
+export { default as AnimateIn } from "./AnimateIn";

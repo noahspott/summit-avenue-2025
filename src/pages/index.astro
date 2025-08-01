@@ -1,6 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { Header, Footer } from "@/components/ui";
+import { Header } from "@/components/layout";
 import ContactSection from "@/components/contact-form/ContactSection";
 import {
   HeroSection,
@@ -21,5 +21,4 @@ import {
   <PricingSection />
   <FaqSection />
   <ContactSection client:load />
-  <Footer />
 </Layout>

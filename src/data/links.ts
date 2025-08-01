@@ -6,22 +6,22 @@ export interface Link {
 export const LINKS: Link[] = [
   {
     display: "Work",
-    href: "/Work",
+    href: "/work",
   },
   {
     display: "Services",
-    href: "/Services",
+    href: "/services",
   },
   {
     display: "About",
-    href: "/About",
+    href: "/about",
   },
   {
     display: "Blog",
-    href: "/Blog",
+    href: "/blog",
   },
   {
     display: "Contact",
-    href: "/Contact",
+    href: "/contact",
   },
 ];

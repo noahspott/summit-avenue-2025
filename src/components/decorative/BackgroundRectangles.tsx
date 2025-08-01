@@ -26,7 +26,7 @@ export default function BackgroundRectangles({
     >
       <div className="relative w-full h-full -top-[500px] -left-[850px] sm:-left-[800px] md:-left-[700px] lg:-left-[600px]">
         <motion.div
-          className="bg-light-blue-100 absolute h-[2000px] w-[700px] -z-50 top-0 left-32"
+          className="bg-light-blue-100 absolute h-[2000px] w-[700px] -z-50 top-0 left-32 shadow-2xl shadow-orange-50"
           style={{
             y: y1,
             x: x1,

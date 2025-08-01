@@ -1,25 +1,37 @@
 ---
-import { Content, ButtonPrimary } from "../ui";
+import { Content, LinkPrimary } from "../ui";
 import { HeroBackground } from "../decorative";
+import { motion } from "motion/react";
 ---
 
 <section class="py-40 md:py-64 relative overflow-clip">
   <HeroBackground client:load />
   <Content>
-    <div
-      class="relative flex flex-col gap-8 z-50 text-center sm:text-left items-center sm:items-start"
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: 40,
+      }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.2, delay: 0.1 }}
+      className="mx-auto max-w-[1280px] relative flex flex-col gap-8 z-50 text-center sm:text-left items-center sm:items-start"
+      client:load
     >
-      <h1 class="font-2 font-montserrat text-h1">
-        Custom Websites for<br />
-        <span class="gradient-blue-text">Small Businesses</span>
+      <h1 class="text-h1">
+        <span class="text-dark-2">Fast websites.</span>
+
+        <br />
+        <span class="italic">Modern designs.</span>
+        <br />
+        <span class="gradient-blue-text">Zero headaches.</span>
       </h1>
-      <p class="text-body-base font-montserrat max-w-[400px]">
-        We make modern, performant websites <br class="hidden sm:block" />to
-        elevate your online presence.
+      <p class="text-body-lg font-light max-w-[400px] md:max-w-[600px]">
+        Everything you need for a professional online presence without the
+        stress of managing it.
       </p>
-      <ButtonPrimary className="sm:self-start">
-        Let's Build Your Website
-      </ButtonPrimary>
-    </div>
+      <LinkPrimary className="sm:self-start" href="/contact" client:load>
+        Let's Get Started
+      </LinkPrimary>
+    </motion.div>
   </Content>
 </section>
