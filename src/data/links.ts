@@ -9,8 +9,8 @@ export const LINKS: Link[] = [
     href: "/",
   },
   {
-    display: "Work",
-    href: "/work",
+    display: "Our Work",
+    href: "/our-work",
   },
   {
     display: "Services",

@@ -25,6 +25,11 @@ export const seo: Record<string, SeoMeta> = {
     description: "Let's talk about your website.",
     url: `${URL}/contact`,
   },
+  ourWork: {
+    title: "Our Work | Summit Avenue Web Solutions",
+    description: "Our Work",
+    url: `${URL}/our-work`,
+  },
   notFound: {
     title: "404 Not Found | Summit Avenue Web Solutions",
     description: "404 Not Found",

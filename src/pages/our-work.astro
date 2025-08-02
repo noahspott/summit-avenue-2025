@@ -1,0 +1,35 @@
+---
+// Components
+import Layout from "@/layouts/Layout.astro";
+import { Section, Content } from "@/components/ui";
+import { SubpageHeader } from "@/components/shared/";
+import OurWorkCard from "@/components/Home/OurWorkCard.astro";
+import { AnimateOnInView } from "@/components/decorative";
+import ContactSection from "@/components/contact-form/ContactSection";
+
+// Data
+import { seo } from "@/data/seo";
+import { work } from "@/data/portfolio";
+---
+
+<Layout seo={seo.ourWork}>
+  <SubpageHeader heading="Our Work" />
+  <Section>
+    <Content>
+      <ul class="flex flex-col gap-24">
+        {
+          work.map((work, index) => {
+            return (
+              <li>
+                <AnimateOnInView delay={0.2} client:load>
+                  <OurWorkCard {...work} />
+                </AnimateOnInView>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </Content>
+  </Section>
+  <ContactSection client:load />
+</Layout>
