@@ -1,3 +1,20 @@
 ---
-return Astro.redirect("/");
+// Components
+import Layout from "@/layouts/Layout.astro";
+import { Section, Content } from "@/components/ui";
+import { SubpageHeader } from "@/components/shared/";
+
+// Data
+import { seo } from "@/data/seo";
 ---
+
+<Layout seo={seo.notFound}>
+  <SubpageHeader heading="404" />
+  <Section>
+    <Content>
+      <div class="flex flex-col h-full w-full gap-8">
+        <p class="text-body-lg">The page you're looking for doesn't exist!</p>
+      </div>
+    </Content>
+  </Section>
+</Layout>

@@ -1,6 +1,6 @@
 ---
+// Components
 import Layout from "@/layouts/Layout.astro";
-import { Header } from "@/components/layout";
 import ContactSection from "@/components/contact-form/ContactSection";
 import {
   HeroSection,
@@ -10,9 +10,12 @@ import {
   PricingSection,
   FaqSection,
 } from "@/components/Home";
+
+//
+import { seo } from "@/data/seo";
 ---
 
-<Layout>
+<Layout seo={seo.home}>
   <HeroSection />
   <ServicesSection />
   <TestimonialsSection />

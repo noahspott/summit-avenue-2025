@@ -17,44 +17,57 @@ import { LINKS } from "@/data/links";
 const { isSkeleton = false } = Astro.props as { isSkeleton?: boolean };
 ---
 
-<header class="py-8 absolute top-0 left-0 right-0 z-50 overflow-clip">
-  <Content>
-    <nav class="flex justify-between">
-      <a href="/" aria-label="Navigate to home page" class="">
-        <Image
-          src={logoFull}
-          alt="Summit Avenue Web Solutions logo"
-          class="h-10 sm:h-12 w-auto hover:scale-[102%] active:scale-[98%] hidden lg:block"
-          loading={"eager"}
-        />
-        <Image
-          src={logoIcon}
-          alt="Summit Avenue Web Solutions logo"
-          class="h-10 sm:h-12 w-auto hover:scale-[102%] active:scale-[98%] lg:hidden"
-          loading={"eager"}
-        />
-      </a>
-      <div class="flex gap-10 transition-all duration-300">
-        <ul class="gap-8 hidden lg:flex">
-          {
-            LINKS.map((link: Link) => {
-              return (
-                <li class="rounded-full">
-                  <a
-                    class="font-montserrat text-link text-dark-1 link-underline rounded-full"
-                    href={link.href}
-                  >
-                    {link.display}
-                  </a>
-                </li>
-              );
-            })
-          }
-        </ul>
-        <div class="flex w-[24px] items-center lg:hidden">
-          <MenuButton className="lg:hidden" client:load />
-        </div>
-      </div>
-    </nav>
-  </Content>
-</header>
+{
+  isSkeleton && (
+    <div class="py-8">
+      <div class="h-10 sm:h-12" />
+    </div>
+  )
+}
+
+{
+  !isSkeleton && (
+    <header
+      class={`py-8 absolute top-0 left-0 right-0 z-50 overflow-clip ${isSkeleton ? "block" : "absolute"}`}
+    >
+      <Content>
+        <nav class="flex justify-between">
+          <a href="/" aria-label="Navigate to home page" class="">
+            <Image
+              src={logoFull}
+              alt="Summit Avenue Web Solutions logo"
+              class="h-10 sm:h-12 w-auto hover:scale-[102%] active:scale-[98%] hidden lg:block"
+              loading={"eager"}
+            />
+            <Image
+              src={logoIcon}
+              alt="Summit Avenue Web Solutions logo"
+              class="h-10 sm:h-12 w-auto hover:scale-[102%] active:scale-[98%] lg:hidden"
+              loading={"eager"}
+            />
+          </a>
+
+          <div class="flex gap-10 transition-all duration-300">
+            <ul class="gap-8 hidden lg:flex">
+              {LINKS.map((link: Link) => {
+                return (
+                  <li class="rounded-full">
+                    <a
+                      class="font-montserrat text-link text-dark-1 link-underline rounded-full"
+                      href={link.href}
+                    >
+                      {link.display}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+            <div class="flex w-[24px] items-center lg:hidden">
+              <MenuButton className="lg:hidden" client:load />
+            </div>
+          </div>
+        </nav>
+      </Content>
+    </header>
+  )
+}

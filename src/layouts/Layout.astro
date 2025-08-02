@@ -1,9 +1,13 @@
 ---
 // Components
 import { Footer, Header } from "@/components/layout";
+import { Favicon, Seo } from "@/components/common";
+import type { SeoMeta } from "@/data/seo";
 
 // Styles
 import "../styles/global.css";
+
+const { seo } = Astro.props as { seo: SeoMeta };
 ---
 
 <!doctype html>
@@ -12,11 +16,15 @@ import "../styles/global.css";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Summit Avenue Web Solutions</title>
+
+    <Favicon />
+    <Seo {...seo} />
   </head>
   <body>
     <Header />
-    <slot />
+    <main>
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>

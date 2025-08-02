@@ -67,12 +67,16 @@ const pricingPackages = [
         <h2 class="text-h4 font-montserrat font-2 text-dark-2">Pricing</h2>
         <p class="text-h2 font-montserrat font-2 text-dark-1">Our Packages</p>
       </div>
-      <ul class="flex flex-col xl:flex-row gap-4">
+      <ul class="flex justify-center flex-col xl:flex-row gap-4">
         {
           pricingPackages.map((pricingPackage, index) => {
             return (
-              <li>
-                <AnimateOnInView delay={0.1 * index} client:load>
+              <li class="w-fit">
+                <AnimateOnInView
+                  delay={0.1 * index}
+                  className="w-fit"
+                  client:load
+                >
                   <PricingCard {...pricingPackage} />
                 </AnimateOnInView>
               </li>

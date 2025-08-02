@@ -1,0 +1,16 @@
+---
+// Components
+import { Section, Content } from "@/components/ui";
+import { Header } from "@/components/layout";
+
+const { heading } = Astro.props as { heading: string };
+---
+
+<Header isSkeleton={true} />
+<Section>
+  <Content>
+    <h1 class="text-h1">
+      {heading}
+    </h1>
+  </Content>
+</Section>
