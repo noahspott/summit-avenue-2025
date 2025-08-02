@@ -17,16 +17,18 @@ export default function HeroBackground() {
         <BackgroundMountainParallax scrollY={scrollY} />
       </AnimateIn>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.5 }}
-        transition={{ delay: 0.2 }}
-      >
-        <AnimatedHeroLogo
-          scrollY={scrollY}
-          className="z-10 right-0 sm:right-[70px] -top-[60px] md:-top-[70px]"
-        />
-      </motion.div>
+      <div className="opacity-30 lg:opacity-100">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.5 }}
+          transition={{ delay: 0.2 }}
+        >
+          <AnimatedHeroLogo
+            scrollY={scrollY}
+            className="z-10 right-0 sm:right-[70px] -top-[60px] md:-top-[70px]"
+          />
+        </motion.div>
+      </div>
     </>
   );
 }

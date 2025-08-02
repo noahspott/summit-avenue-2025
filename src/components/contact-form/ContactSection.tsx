@@ -2,6 +2,7 @@
 import { useState } from "react";
 
 // Components
+import { HeaderSkeleton } from "@/components/layout";
 import { Content, Section } from "@/components/ui";
 import ContactForm from "./ContactForm";
 import SuccessMessage from "./SuccessMessage";
@@ -23,6 +24,7 @@ export default function ContactSection() {
         alt=""
         className="absolute inset-0 w-full h-full object-cover"
       />
+      <HeaderSkeleton />
       <Content>
         <div className="flex flex-col gap-24 items-center">
           <div className="flex max-w-xl flex-col gap-2 items-center">

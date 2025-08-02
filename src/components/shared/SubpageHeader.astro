@@ -6,10 +6,10 @@ import { Header } from "@/components/layout";
 const { heading } = Astro.props as { heading: string };
 ---
 
-<Header isSkeleton={true} />
-<Section>
+<Section className="bg-gradient-to-r from-light-1 to-light-blue-300">
+  <Header isSkeleton={true} />
   <Content>
-    <h1 class="text-h1">
+    <h1 class="text-h1 font-2">
       {heading}
     </h1>
   </Content>

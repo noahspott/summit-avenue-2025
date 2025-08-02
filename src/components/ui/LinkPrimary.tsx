@@ -11,7 +11,7 @@ export default function LinkPrimary({
   return (
     <a
       {...props}
-      className={`group rounded-4xl p-[2px] gradient-blue-bg hover:cursor-pointer hover:shadow-md hover:scale-[101%] ${className}`}
+      className={`group rounded-4xl p-[2px] gradient-blue-bg hover:cursor-pointer shadow-md hover:shadow-lg hover:scale-[101%] ${className}`}
     >
       <div className="rounded-4xl flex gap-2.5 items-center py-4 px-8">
         <div className="text-white group-hover:cursor-pointer text-lg sm:text-xl font-montserrat font-2 rounded-4xl">

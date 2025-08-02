@@ -1,7 +1,7 @@
 ---
 // Components
 import { Footer, Header } from "@/components/layout";
-import { Favicon, Seo } from "@/components/common";
+import { Favicon, Seo, ThemeMeta } from "@/components/common";
 import type { SeoMeta } from "@/data/seo";
 
 // Styles
@@ -19,8 +19,8 @@ const { seo } = Astro.props as { seo: SeoMeta };
 
     <Favicon />
     <Seo {...seo} />
-  </head>
-  <body>
+    <ThemeMeta color="#e7f1ff" />
+  </head><body>
     <Header />
     <main>
       <slot />
