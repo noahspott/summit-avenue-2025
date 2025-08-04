@@ -31,7 +31,7 @@ export default function ContactSection() {
             <h2 className="text-h4">Contact</h2>
             <p className="text-h2 gradient-blue-text">Let's Get Started</p>
           </div>
-          <div className="w-full max-w-2xl">
+          <div className="w-full max-w-4xl">
             {loadingState === "idle" && (
               <AnimateOnInView>
                 <ContactForm

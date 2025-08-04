@@ -48,7 +48,7 @@ export default function ContactForm({
       name="contact"
       method="POST"
       className={clsx(
-        "body-copy text-primary bg-white p-4 shadow-2xl rounded-2xl",
+        "body-copy text-primary bg-white p-4 shadow-2xl shadow-accent/50 rounded-2xl",
         className
       )}
       onSubmit={(e) => submitHandler(e)}
@@ -76,14 +76,26 @@ export default function ContactForm({
           type="email"
           placeholder="Email"
         />
+        <FormInput
+          label="Business Name"
+          name="business-name"
+          type="text"
+          placeholder="Business Name"
+        />
+        <FormInput
+          label="Website"
+          name="website"
+          type="text"
+          placeholder="www.YourBusiness.com"
+        />
         <div className="flex flex-col gap-4">
-          <label className="font-heading capitalize text-h5" htmlFor="message">
-            Message
+          <label className="font-heading capitalize text-h8" htmlFor="message">
+            Website Goals
           </label>
           <textarea
             rows={5}
             name="message"
-            className="text-body-base rounded-lg appearance-none bg-gray-100 p-4"
+            className="text-body-base rounded-lg appearance-none bg-gray-100 p-4 placeholder-gray-500"
             placeholder="Tell us about your website goals"
             required
           />
