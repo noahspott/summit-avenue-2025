@@ -53,15 +53,13 @@ const testimonials = [
                     <p class="font-inter leading-6 font-1 text-[96px] text-light-blue-500 relative top-6">
                       "
                     </p>
-                    <p class="text-body-base font-montserrat">
-                      {testimonial.body}
-                    </p>
+                    <p class="text-body-base">{testimonial.body}</p>
                     <div class="flex gap-4">
                       {Array(5)
                         .fill(0)
                         .map(() => (
                           <Star
-                            className="text-brand-orange-500"
+                            className="text-brand-orange-500 size-5"
                             fill="#f4a261"
                           />
                         ))}
@@ -70,12 +68,12 @@ const testimonials = [
                       <Image
                         src={testimonial.image}
                         alt=""
-                        class="size-16 rounded-full border border-brand-orange-500"
+                        class="size-16 rounded-full inset-shadow-sm"
                         loading={"lazy"}
                         decoding="async"
                       />
 
-                      <div class="flex flex-col gap-1 ">
+                      <div class="flex flex-col">
                         <p class="text-body-base font-inter font-2">
                           {testimonial.author}
                         </p>
