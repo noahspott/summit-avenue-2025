@@ -64,12 +64,12 @@ const services = [
 <section class="py-24">
   <Content>
     <motion.div
-      className="-mx-[6%] md:-mx-0 px-[5%] py-24 relative bg-black overflow-clip rounded-card"
+      className="-mx-[6%] md:-mx-0 px-[5%] py-24 relative bg-black backdrop-blur-2xl overflow-clip rounded-card"
       client:load
     >
       <Image
         src={background}
-        class="absolute w-full h-full object-cover top-0 left-0 blur-sm"
+        class="absolute w-full h-full object-cover top-0 left-0"
         alt=""
         loading={"lazy"}
       />
@@ -86,7 +86,7 @@ const services = [
               return (
                 <li class="flex">
                   <AnimateOnInView delay={0.1 * index} client:load>
-                    <div class="h-full border border-light-blue-500/30 rounded-card bg-light-blue-500/30 backdrop-blur-lg flex flex-col gap-4 p-8">
+                    <div class="h-full border border-light-blue-500/30 rounded-card bg-light-blue-500/30 flex flex-col gap-4 p-8">
                       <Image
                         src={service.icon}
                         alt=""
