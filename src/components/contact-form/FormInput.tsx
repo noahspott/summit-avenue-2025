@@ -12,12 +12,12 @@ export default function FormInput({
   className?: string;
 }) {
   return (
-    <div className={`flex flex-col gap-4 ${className}`}>
-      <label className="text-h5 capitalize" htmlFor={name}>
+    <div className={`flex flex-col gap-2 ${className}`}>
+      <label className="text-h8 capitalize" htmlFor={name}>
         {label}
       </label>
       <input
-        className="text-body-base rounded-lg bg-gray-100 p-4"
+        className="text-body-base rounded-lg bg-gray-100 p-4 placeholder-gray-500"
         placeholder={placeholder}
         name={name}
         type={type}
