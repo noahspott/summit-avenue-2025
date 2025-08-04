@@ -28,7 +28,7 @@ const { isSkeleton = false } = Astro.props as { isSkeleton?: boolean };
 {
   !isSkeleton && (
     <header
-      class={`py-8 absolute top-0 left-0 right-0 z-50 overflow-clip ${isSkeleton ? "block" : "absolute"}`}
+      class={`py-8 w-full absolute mx-auto top-0 min-w-[380px] left-0 right-0 z-50 overflow-clip ${isSkeleton ? "block" : "absolute"}`}
     >
       <Content>
         <nav class="flex justify-between">
