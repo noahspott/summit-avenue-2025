@@ -42,6 +42,9 @@ export default function AnimateIn({
       animate={{ opacity: finalOpacity, y: 0 }}
       transition={transition}
       className={className}
+      style={{
+        willChange: "opacity",
+      }}
     >
       {children}
     </motion.div>

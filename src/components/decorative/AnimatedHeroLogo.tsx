@@ -1,11 +1,4 @@
-import {
-  motion,
-  MotionValue,
-  transform,
-  useScroll,
-  useSpring,
-  useTransform,
-} from "framer-motion";
+import { motion, MotionValue, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 export default function AnimatedHeroLogo({
@@ -28,7 +21,11 @@ export default function AnimatedHeroLogo({
   // Light Blue
   const x1 = useTransform(scrollY, [0, 1000], [0, -x]);
   const y1 = useTransform(scrollY, [0, 1000], [0, -y]);
+
+  const baseSize = 1000;
   const size1 = useTransform(scrollY, [0, 1000], [1000, 500]);
+  const scale1 = useTransform(size1, (value) => value / baseSize);
+
   const opacity1 = useTransform(scrollY, [0, 500], [1, 0]);
 
   // Mountain Image
@@ -62,8 +59,7 @@ export default function AnimatedHeroLogo({
               x: x1,
               y: y1,
               opacity: opacity1,
-              width: size1,
-              height: size1,
+              scale: scale1,
               willChange: "transform, opacity",
             }}
           />

@@ -22,10 +22,13 @@ export default function HeroBackground() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.5 }}
           transition={{ delay: 0.2 }}
+          style={{
+            willChange: "opacity",
+          }}
         >
           <AnimatedHeroLogo
             scrollY={scrollY}
-            className="z-10 right-0 sm:right-[70px] -top-[60px] md:-top-[70px]"
+            className="z-10 right-0 sm:right-[70px] bottom-0 lg:bottom-auto lg:-top-[70px]"
           />
         </motion.div>
       </div>

@@ -31,6 +31,7 @@ export default function BackgroundRectangles({
             y: y1,
             x: x1,
             rotate: 25,
+            willChange: "transform",
           }}
         />
         <motion.div
@@ -39,6 +40,7 @@ export default function BackgroundRectangles({
             y: y2,
             x: x2,
             rotate: 25,
+            willChange: "transform",
           }}
         />
         <motion.div
@@ -47,6 +49,7 @@ export default function BackgroundRectangles({
             y: y3,
             x: x3,
             rotate: 25,
+            willChange: "transform",
           }}
         />
       </div>

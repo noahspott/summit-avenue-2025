@@ -16,6 +16,9 @@ export default function MenuModal({
       initial={{ x: "100%", opacity: 1 }}
       animate={{ x: 0, opacity: 1 }}
       exit={{ x: "100%", opacity: 0 }}
+      style={{
+        willChange: "transform, opacity",
+      }}
       transition={{ type: "tween", duration: 0.1, stiffness: 50, damping: 10 }}
       className="bg-gradient-to-br from-primary/100 to-primary/90 fixed inset-0 z-50 flex h-screen w-screen items-center justify-center backdrop-blur-xl"
     >

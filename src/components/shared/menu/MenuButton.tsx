@@ -20,6 +20,9 @@ export default function MenuButton({ className = "" }: { className?: string }) {
         <motion.div
           initial={{ x: "40px", opacity: 0 }}
           animate={{ x: "0", opacity: 1 }}
+          style={{
+            willChange: "transform, opacity",
+          }}
           key="menu-button"
         >
           <motion.button

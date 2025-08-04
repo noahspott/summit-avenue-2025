@@ -40,6 +40,7 @@ export default function BackgroundLogo({
         style={{
           x: x3,
           y: y3,
+          willChange: "transform",
         }}
       >
         <img
@@ -52,6 +53,7 @@ export default function BackgroundLogo({
         style={{
           x: x2,
           y: y2,
+          willChange: "transform",
         }}
       >
         <img
@@ -64,6 +66,7 @@ export default function BackgroundLogo({
         style={{
           x: x1,
           y: y1,
+          willChange: "transform",
         }}
       >
         <img

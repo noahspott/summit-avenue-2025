@@ -25,6 +25,9 @@ export default function AnimateOnInView({
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.4, delay }}
       className={className}
+      style={{
+        willChange: "opacity, transform",
+      }}
     >
       {children}
     </motion.div>
