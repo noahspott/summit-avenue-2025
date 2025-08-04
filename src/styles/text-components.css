@@ -63,4 +63,8 @@
   .text-link {
     @apply font-1 text-base tracking-wide sm:text-lg select-none hover:underline decoration-accent decoration-2;
   }
+
+  .brand-underline {
+    @apply underline underline-offset-8 decoration-[8px];
+  }
 }
