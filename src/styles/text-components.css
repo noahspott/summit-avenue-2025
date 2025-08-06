@@ -17,7 +17,7 @@
 
 @layer components {
   .text-h1 {
-    @apply font-light font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl;
+    @apply font-light font-heading text-4xl min-[480px]:text-5xl md:text-6xl lg:text-7xl;
   }
   .text-h2 {
     @apply font-semibold font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
@@ -61,7 +61,7 @@
   }
 
   .text-link {
-    @apply font-1 text-base tracking-wide sm:text-lg select-none hover:underline decoration-accent decoration-2;
+    @apply font-1 text-base tracking-wide select-none hover:underline decoration-accent decoration-2;
   }
 
   .brand-underline {

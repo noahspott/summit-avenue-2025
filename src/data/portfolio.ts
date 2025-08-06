@@ -1,6 +1,6 @@
 // Logos
-import thebenderzLogo from "@/assets/images/portfolio/logos/the-benderz-logo.png";
-import adartistryLogo from "@/assets/images/portfolio/logos/ad-artistry-logo.png";
+import thebenderzLogo from "@/assets/images/portfolio/logos/the-benderz-logo.svg";
+import adartistryLogo from "@/assets/images/portfolio/logos/ad-artistry-logo.svg";
 import sfhLogo from "@/assets/images/portfolio/logos/sfh-logo.png";
 
 // Mockups

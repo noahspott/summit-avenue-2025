@@ -2,14 +2,27 @@
 // Components
 import { Section, Content } from "@/components/ui";
 import { Header } from "@/components/layout";
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
 
-const { heading } = Astro.props as { heading: string };
+// Images
+import defaultBackground from "@/assets/images/mountains/hero-mountain-bg.png";
+
+const { heading, bgSrc = defaultBackground } = Astro.props as {
+  heading: string;
+  bgSrc: ImageMetadata;
+};
 ---
 
-<Section className="bg-gradient-to-r from-light-1 to-light-blue-300">
+<Section className="bg-gradient-to-r from-light-1 to-light-blue-300 relative">
+  <Image
+    src={bgSrc}
+    alt=""
+    class="absolute inset-0 w-full h-full object-cover opacity-5"
+  />
   <Header isSkeleton={true} />
   <Content>
-    <h1 class="text-h1 font-2">
+    <h1 class="text-h1 font-2 brand-underline decoration-accent">
       {heading}
     </h1>
   </Content>

@@ -13,7 +13,7 @@ export default function LinkSecondary({
   return (
     <a
       {...props}
-      className={`button-secondary relative flex flex-row gap-2.5 items-center ${className}`}
+      className={`button-secondary px-8 relative flex flex-row gap-2.5 items-center ${className}`}
     >
       <div className="text-xl link-underline font-montserrat font-2 pt-4 mb-4">
         {children}

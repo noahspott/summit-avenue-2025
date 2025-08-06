@@ -47,28 +47,31 @@ const faqs = [
 ];
 ---
 
-<section class="py-24">
-  <Content>
-    <motion.div
-      className="-mx-[6%] md:-mx-0 px-[5%] py-24 relative bg-black overflow-clip rounded-card"
-      client:load
+<section>
+  <motion.div
+    className="py-24 relative bg-black overflow-clip rounded-card"
+    client:load
+  >
+    <div
+      class="absolute w-full h-full object-cover top-0 left-0 bg-gradient-to-b from-deep-blue-500 to-deep-blue-500/50"
     >
-      <div
-        class="absolute w-full h-full object-cover top-0 left-0 bg-gradient-to-b from-deep-blue-500 to-deep-blue-500/50"
-      >
-      </div>
-      <div class="relative z-10 flex flex-col gap-12">
+    </div>
+    <Content>
+      <div class="relative z-10 flex flex-col gap-10">
         <div class="flex flex-col gap-2">
-          <h2 class="text-h2 font-2 text-light-1">FAQs</h2>
+          <h2 class="text-h5 font-montserrat font-2 text-light-2">FAQs</h2>
+          <p class="text-h2 font-montserrat font-2 text-light-1">
+            Got questions?
+          </p>
         </div>
-        <ul class="flex flex-col gap-12">
+        <ul class="flex flex-col gap-8">
           {
             faqs.map((faq) => {
               return (
                 <li>
                   <AnimateOnInView client:load>
-                    <div class=" flex flex-col gap-4">
-                      <h3 class="text-light-1 text-h3 font-montserrat font-2">
+                    <div class=" flex flex-col gap-0.5">
+                      <h3 class="text-light-1 text-h5 font-montserrat font-2">
                         {faq.question}
                       </h3>
                       <p class="text-light-1 text-body-base font-inter">
@@ -82,8 +85,8 @@ const faqs = [
           }
         </ul>
       </div>
-    </motion.div>
-  </Content>
+    </Content>
+  </motion.div>
 </section>
 
 <style>

@@ -6,7 +6,7 @@ export default function Content({
   children: React.ReactNode;
 }) {
   return (
-    <div className={`relative px-[5%] max-w-[1920px] mx-auto ${className}`}>
+    <div className={`relative px-[8%] max-w-[1920px] mx-auto ${className}`}>
       {children}
     </div>
   );

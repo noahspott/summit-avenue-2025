@@ -2,7 +2,7 @@
 // Components
 import { Content } from "@/components/ui";
 import { BackgroundLogo } from "@/components/decorative";
-import { Star } from "lucide-react";
+import { Star, MessageSquareQuote, Quote } from "lucide-react";
 import { Image } from "astro:assets";
 import { AnimateOnInView } from "@/components/decorative";
 
@@ -36,9 +36,9 @@ const testimonials = [
 <section class="py-24 relative overflow-clip">
   <BackgroundLogo client:load />
   <Content>
-    <div class="flex flex-col gap-12">
+    <div class="flex flex-col gap-10">
       <div class="flex flex-col gap-2">
-        <h2 class="text-h4 font-montserrat font-2 text-dark-2">Testimonials</h2>
+        <h2 class="text-h5 font-montserrat font-2 text-dark-2">Testimonials</h2>
         <p class="text-h2 font-montserrat font-2 text-dark-1">
           What Our Clients Say
         </p>
@@ -50,11 +50,16 @@ const testimonials = [
               <li class="self-start">
                 <AnimateOnInView delay={0.1 * index} client:load>
                   <div class="p-8 flex flex-col gap-8 bg-white/60 backdrop-blur-lg shadow-xl rounded-card">
-                    <p class="font-inter leading-6 font-1 text-[96px] text-light-blue-500 relative top-6">
-                      "
+                    <div class="flex flex-col">
+                      <Quote
+                        fill="#a6bce3"
+                        className="size-5 text-light-blue-400 self-end"
+                      />
+                    </div>
+                    <p class="text-body-base font-montserrat text-dark-2">
+                      {testimonial.body}
                     </p>
-                    <p class="text-body-base">{testimonial.body}</p>
-                    <div class="flex gap-4">
+                    <div class="flex gap-2">
                       {Array(5)
                         .fill(0)
                         .map(() => (
@@ -74,7 +79,7 @@ const testimonials = [
                       />
 
                       <div class="flex flex-col">
-                        <p class="text-body-base font-inter font-2">
+                        <p class="text-body-sm font-inter font-2">
                           {testimonial.author}
                         </p>
                         <p class="text-body-sm font-inter text-dark-2">

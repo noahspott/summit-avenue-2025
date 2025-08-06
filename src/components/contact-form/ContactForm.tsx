@@ -55,47 +55,20 @@ export default function ContactForm({
     >
       <div className="flex flex-col gap-8 py-4 px-2 sm:px-8 sm:py-16">
         <div className="flex flex-col gap-8 md:flex-row">
-          <FormInput
-            label="name"
-            name="name"
-            type="text"
-            className="flex-1"
-            placeholder="Name"
-          />
-          <FormInput
-            label="phone"
-            name="phone"
-            type="tel"
-            className="flex-1"
-            placeholder="Phone"
-          />
+          <FormInput label="name" name="name" type="text" className="flex-1" />
+          <FormInput label="phone" name="phone" type="tel" className="flex-1" />
         </div>
-        <FormInput
-          label="email"
-          name="email"
-          type="email"
-          placeholder="Email"
-        />
-        <FormInput
-          label="Business Name"
-          name="business-name"
-          type="text"
-          placeholder="Business Name"
-        />
-        <FormInput
-          label="Website"
-          name="website"
-          type="text"
-          placeholder="www.YourBusiness.com"
-        />
+        <FormInput label="email" name="email" type="email" />
+        <FormInput label="Business Name" name="business-name" type="text" />
+        <FormInput label="Website" name="website" type="text" />
         <div className="flex flex-col gap-4">
-          <label className="font-heading capitalize text-h8" htmlFor="message">
+          <label className="font-heading capitalize text-h9" htmlFor="message">
             Website Goals
           </label>
           <textarea
             rows={5}
             name="message"
-            className="text-body-base rounded-lg appearance-none bg-gray-100 p-4 placeholder-gray-500"
+            className="text-body-base bg-light-blue-100 rounded-2xl p-2 placeholder-gray-500"
             placeholder="Tell us about your website goals"
             required
           />

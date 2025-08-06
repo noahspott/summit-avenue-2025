@@ -17,7 +17,7 @@ export default function HeroBackground() {
         <BackgroundMountainParallax scrollY={scrollY} />
       </AnimateIn>
 
-      <div className="opacity-30 lg:opacity-100">
+      <div className="opacity-30 lg:opacity-100 hidden sm:block">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.5 }}

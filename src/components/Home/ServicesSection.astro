@@ -1,5 +1,5 @@
 ---
-import { Content, ButtonSecondary } from "@/components/ui";
+import { Content, Link } from "@/components/ui";
 import { motion } from "motion/react";
 import { Image } from "astro:assets";
 import { AnimateOnInView } from "@/components/decorative";
@@ -20,88 +20,96 @@ const services = [
     icon: websiteDesignIcon,
     title: "Website Design",
     description:
-      "Crafting clean, responsive designs that reflect your brand and keep users engaged across all devices.",
+      "Modern, clean designs that make your business look professional and build instant trust with customers.",
     href: "",
   },
   {
     icon: websiteDevelopmentIcon,
     title: "Web Development",
     description:
-      "Modern, performant websites built with clean code, strong UX principles, and scalable architecture.",
+      "Fast-loading, mobile-friendly websites that keep visitors from leaving and turn them into customers.",
     href: "",
   },
   {
     icon: copywritingIcon,
     title: "Copywriting",
     description:
-      "Clear, persuasive copy that speaks to your audience and strengthens your brand's voice.",
+      "Words that answer customer concerns, show your value, and motivate them to take action.",
     href: "",
   },
   {
     icon: graphicDesignIcon,
     title: "Graphic Design",
     description:
-      "Stand-out visuals for web, print, and social—designed to elevate your brand and captivate your audience.",
+      "Consistent, modern graphics for your site and social media to strengthen your brand and build credibility.",
     href: "",
   },
   {
     icon: apiIcon,
     title: "API Integration",
     description:
-      "Custom backend solutions that connect your site with the tools and data you rely on.",
+      "Connect your website to the tools you already use so your business runs smoother and saves you time.",
     href: "",
   },
   {
     icon: hostingIcon,
     title: "Hosting & Maintenance",
     description:
-      "Reliable, secure hosting with ongoing updates, backups, and performance monitoring—so your site just works.",
+      "Secure, reliable hosting with updates and backups included—so you never have to worry about your website.",
     href: "",
   },
 ];
 ---
 
-<section class="py-24">
-  <Content>
-    <motion.div
-      className="-mx-[6%] md:-mx-0 px-[5%] py-24 relative bg-black backdrop-blur-2xl overflow-clip rounded-card"
-      client:load
-    >
-      <Image
-        src={background}
-        class="absolute w-full h-full object-cover top-0 left-0"
-        alt=""
-        loading={"lazy"}
-      />
-      <div class="relative z-10 flex flex-col gap-12">
+<section class="">
+  <motion.div
+    className="py-24 relative bg-black backdrop-blur-2xl overflow-clip rounded-card"
+    client:load
+  >
+    <Image
+      src={background}
+      class="absolute w-full h-full object-cover top-0 left-0"
+      alt=""
+      loading={"lazy"}
+    />
+    <Content>
+      <div class="relative z-10 flex flex-col gap-10">
         <div class="flex flex-col gap-2">
-          <h2 class="font-montserrat text-h4 font-2 text-light-1">
+          <h2 class="font-montserrat text-h5 font-2 text-light-1">
             Our Services
           </h2>
           <p class="font-montserrat text-h2 font-2 text-light-1">What We Do</p>
         </div>
-        <ul class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+        <ul
+          class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-4"
+        >
           {
             services.map((service, index) => {
               return (
                 <li class="flex">
                   <AnimateOnInView delay={0.1 * index} client:load>
-                    <div class="h-full border border-light-blue-500/30 rounded-card bg-light-blue-500/30 flex flex-col gap-4 p-8">
-                      <Image
-                        src={service.icon}
-                        alt=""
-                        class="size-12 lg:size-14 "
-                      />
-                      <h3 class="text-light-1 text-h3 font-montserrat font-2 underline underline-offset-4 decoration-brand-orange-500">
-                        {service.title}
-                      </h3>
-                      <p class="text-light-1 text-body-base font-inter">
-                        {service.description}
-                      </p>
-                      {/* <ButtonSecondary href={service.href} className="self-start">
-                    Learn More
-                  </ButtonSecondary> */}
-                      <div class="p-1" />
+                    <div class="h-full border border-light-blue-500/30 rounded-card bg-light-blue-500/30 flex flex-col gap-4 p-8 justify-between">
+                      <div class="flex flex-col gap-4">
+                        <Image
+                          src={service.icon}
+                          alt=""
+                          class="size-12 lg:size-14 "
+                        />
+                        <h3 class="text-light-1 text-h4 font-montserrat font-2 underline underline-offset-4 decoration-brand-orange-500">
+                          {service.title}
+                        </h3>
+                        <p class="text-light-1 text-body-base font-inter">
+                          {service.description}
+                        </p>
+                      </div>
+                      <Link
+                        href={service.href}
+                        className="self-start text-light-2"
+                        arrowHex="#ffffff"
+                        variant="tertiary"
+                      >
+                        Learn More
+                      </Link>
                     </div>
                   </AnimateOnInView>
                 </li>
@@ -110,8 +118,8 @@ const services = [
           }
         </ul>
       </div>
-    </motion.div>
-  </Content>
+    </Content>
+  </motion.div>
 </section>
 
 <style>
